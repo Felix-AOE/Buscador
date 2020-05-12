@@ -19,6 +19,7 @@
     font-size: 14px;
     line-height: 22px;
     font-family: inherit;
+
 }
 
 .tail-select3 button{
@@ -340,7 +341,7 @@
 
 
 .tail-select3 .select-dropdown3 ul li{
-    color: #303438;
+    color: #425E66;
     padding: 5px 10px 5px 35px;
     font-size: 12px;
     text-align: left;
@@ -499,3 +500,10 @@ li.dropdown-option3:before{
 
 
 /*Para los botones*/
+
+.color_letra{
+    color:#425E66;
+    font-weight: bold;
+    font-size: 0.8em;
+    background-color:rgba(238, 242, 246, 0.5)
+}

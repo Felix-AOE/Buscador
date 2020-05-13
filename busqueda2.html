@@ -32,7 +32,7 @@
 				       			<div class="row col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 " >
 						       		<div class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " ><!--div de los 3 primeros botones -->
 						       			<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-2 mt-sm-2 mt-md-2" >
-						       				<div class="tail-select2 no-classes multiple " tabindex="0" >
+						       				<div class="tail-select2" tabindex="0" >
 						                    	<div id="select1" data-open="1" class="select-label2 tail-select-container2">
 						                    		<span class="label-count2 ">
 						                    			<i class="fas fa-map-marker-alt"></i>
@@ -146,7 +146,7 @@
 						       		</div><!--Cierre fila con 3 botones-->
 						       		<div class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " >
 						       			<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mt-2 mt-sm-2 mt-md-2"  >
-										    <div class="tail-select3 no-classes multiple " tabindex="0" >
+										    <div  id="select4" class="tail-select3 no-classes multiple " tabindex="0" >
 						                    	<div class="select-label3 tail-select-container3">
 						                    		<span class="label-count3">0</span>
 						                    		<span class="label-inner3">Duracion</span>
@@ -171,7 +171,7 @@
 						                    </div>
 						       			</div>
 						       			<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 mt-2 mt-sm-2 mt-md-2" >
-										    <div class="tail-select no-classes multiple" tabindex="0" id="selector1">
+										    <div class="tail-select no-classes multiple" tabindex="0" id="select5">
 						                    	<div class="select-label tail-select-container">
 						                    		<span class="label-count">0</span>
 						                    		<span class="label-inner">Crucero</span>
@@ -201,32 +201,18 @@
 					       			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
 					       				<div class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2 mt-sm-2 mt-md-2 " >
 						       				<button type="button" class="btn btn-custom col-12 ">Buscar Crucero</button>
-						       			</div>
-						       			<div class="row col-12" >
-						       							
 						       			</div>	
-					       			</div>
-					       			
+					       			</div>	
 					       		</div><!--Cierre de contenedor boton buscar -->
 				       		</div>
-
-
-
-
-
-				       
-			        
-			         </div>
+			        </div>
 			    </div>
 	  		</div>	
 		</div>  
 	</div>
 
 
-		
-
-
-           
+	
 
 		<!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -237,7 +223,6 @@
         <script>
         	
 
-
             document.addEventListener("DOMContentLoaded", function(event) {
 
     			console.log("DOM fully loaded and parsed");
@@ -247,6 +232,9 @@
     			listado_evento.forEach((value)=>{
     				agregar_evento_abrir(value)
     			})
+
+    			agregar_evento_select_duracion("#select4",".select-dropdown3")
+    			agregar_evento_select_duracion("#select5",".select-dropdown")
 
   			});
 
@@ -264,11 +252,12 @@
                 	agregar_evento_quitar() 
 
                 	const that = this;
+                	that.style="width:400px;z-index:100"
                 	const nodo_padre = that.parentElement;
                 	const nodo_cuerpo = nodo_padre.querySelector(".select-dropdown2")
 
                 	if(nodo_cuerpo){
-                		nodo_cuerpo.style="display:block;width:200%"
+                		nodo_cuerpo.style="display:block;width:400px;z-index:100"
 
                 	}else{
                 		console.error("No se pudo obtener el nodo .select-dropdown2")
@@ -276,6 +265,61 @@
 
                 })
   			}
+
+  			const agregar_evento_select_duracion = function (selector,clase){
+
+  				if(!(selector && clase)){
+  					throw new TypeError("Parametros invalidos")
+  				}
+
+  				const nodo = document.querySelector(selector)
+
+  				if(!nodo){
+  					throw new TypeError("Error al obtener el selector #select4")
+  				}
+
+  				nodo.addEventListener("click",(event)=>{
+
+  					agregar_evento_quitar();
+
+  					const that = this;
+  		  			const nodo = document.querySelector(clase)
+
+  					if(!nodo){
+  						throw new TypeError("Error al obtener el selector .select")
+  					}
+
+  					nodo.style="display:block"
+
+  				})
+
+  			}
+
+
+  			const quitar_evento_select_duracion = function(selector,clase){
+
+  				if(!(selector && clase)){
+  					throw new TypeError("Parametros invalidos")
+  				}
+
+
+  				const nodo = document.querySelector(selector)
+
+  				if(!nodo){
+  					throw new TypeError("Error al obtener el selector #select4")
+  				}
+
+  				const nodo_hijo = document.querySelector(clase)
+
+				if(!nodo_hijo){
+					throw new TypeError("Error al obtener el selector .select")
+				}
+
+  				nodo_hijo.style="display:none"
+
+
+  			}
+
 
   			const agregar_evento_quitar = function(){
 
@@ -288,17 +332,21 @@
   				const nodo_array = Array.from(nodos)
 
   				nodo_array.forEach((nodo_actual)=>{
+  					nodo_actual.style="width:100%;z-index:27"
   					const nodo_padre = nodo_actual.parentElement;
                 	const nodo_cuerpo = nodo_padre.querySelector(".select-dropdown2")
 
                 	if(nodo_cuerpo){
-                		nodo_cuerpo.style="display:none"
+                		nodo_cuerpo.style="display:none;z-index:27;width:100%"
 
                 	}else{
                 		console.error("No se pudo obtener el nodo .select-dropdown2")
                 	}
 
   				})
+
+  				quitar_evento_select_duracion("#select4",".select-dropdown3")
+  				quitar_evento_select_duracion("#select5",".select-dropdown")
 
 
   			}

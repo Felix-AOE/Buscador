@@ -17,7 +17,7 @@
     margin: 1px;
     position: relative;
     font-size: 14px;
-    line-height: 22px;
+    line-height: 40px;
     font-family: inherit;
 }
 
@@ -34,7 +34,7 @@
     text-shadow: none;
     letter-spacing: 0;
     text-transform: none;
-    vertical-align: top;
+    /*vertical-align: top;*/
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
@@ -134,7 +134,7 @@
     font-weight: bold;
     line-height: 16px;
     text-shadow: none;
-    vertical-align: top;
+    /*vertical-align: top;*/
     background-color: #d9d9d9;
     border-width: 0;
     border-style: solid;
@@ -163,15 +163,12 @@
     z-index: 27;
     position: relative;
     text-align: left;
-    background-color: white;
+    background-color: #F6F8FA;
     border-width: 0px;
     border-style: solid;
-    border-color: #d9d9d9;
     border-radius: 0px;
-    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.25);
-    -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.25);
-    transition: background 142ms linear, box-shadow 142ms linear;
-    -webkit-transition: background 142ms linear, box-shadow 142ms linear;
+    
+
 }
 
 .tail-select2:hover{
@@ -203,7 +200,7 @@
     width: auto;
     margin: 0;
     text-align: left;
-    vertical-align: top;
+    /*vertical-align: top;*/
 }
 /*Icono*/
 .tail-select2 .select-label2 .label-count2{
@@ -215,11 +212,12 @@
     font-weight: bold;
     text-shadow: none;
     white-space: nowrap;
-    vertical-align: top;
+   /* vertical-align: top;*/
     border-width: 0px 1px 0 0;
     border-style: solid;
     border-color: #d9d9d9;
-    border-radius: 0px;
+    border-radius: 0px; 
+    width: 30px;
 }
 /*contenedor del texto del input principal*/
 .tail-select2 .select-label2 .label-inner2{
@@ -450,14 +448,20 @@ ul li.dropdown-option2{
 
 
 
+
+
+
+
+
+
 /*Propiedades de los componentes de las opciones  */
 
-#custom > input{
+.dropdown-option2 > input{
     width: 20%;
     padding-top: 5%;
 }
 
-#custom > span{
+.dropdown-option2 > span{
     width: 80%;
 }
 
@@ -471,4 +475,71 @@ input[type=checkbox] {
         height: 20px;
     }
     
+   
+/* Iconos font awesome*/ 
+
+.fa-map-marker-alt:before {
+    content: "\f3c5";
+    padding-left: 50%;
+}
+
+.fa-ship:before {
+    content: "\f21a";
+    padding-left: 10%;
+}
+
+.fa-calendar-plus:before {
+    content: "\f271";
+    padding-left: 50%;
+}
+
+
+
+/*Fuentres personalizadas*/
+@font-face {
+    font-family: "Futura Bold";
+    src: url("C:/Users/Desktop/Website/fonts/Harlow_Solid_Italic.ttf");
+}
+
+@font-face {
+    font-family: "Futura Bold";
+    src: url("C:/Users/Desktop/Website/fonts/Harlow_Solid_Italic.ttf");
+}
+
+
+
+
+
+/*Items Custom*/
+
+.btn-custom {
+    color: #fff;
+    background-color: #FF8309;
+    border-color: #FF8309;
+    border-radius: 0px;
+    width: 305px;
+    height:60px;
+    font-family: "Futura Bold";
+    font-size: 15px;
+}
+.btn-custom:hover{
+    background-color: #E17913;
+}
+
+
+.card-custom {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: white !important; 
+    background-clip: border-box;
+    /*border: 1px solid rgba(0,0,0,.125);*/
     
+}

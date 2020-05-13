@@ -431,11 +431,6 @@ ul li.dropdown-option2{
 .tail-select2 .select-dropdown2 ul li.dropdown-option2{
     transition: all 0.3s ease-in;
 }
-.tail-select2 .select-dropdown2 ul li.dropdown-option2:hover,
-.tail-select2 .select-dropdown2 ul li.dropdown-option2.hover{
-    transition: all 0.4s ease;
-    background-color: #e9edf2;
-}
 .tail-select.disabled2 .select-dropdown2 ul li.dropdown-option2,
 .tail-select2 .select-dropdown2 ul li.dropdown-option2.disabled{
     cursor: not-allowed;
@@ -567,3 +562,47 @@ input[type=checkbox] {
 }
 
 /*CLASE DE GRID BOOTSTRAP FALTA ARREGLAR EL GRID*/
+
+
+
+/*CHECKBOX*/
+
+  
+   .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #425E66;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-weight: bold;
+    }
+    
+    .checkbox label:hover {
+      background: #F6F8FA; }
+    
+    .checkbox label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 0%;
+      background: none;
+      border: 3px solid #425E66; }
+    .checkbox label:before {
+    border-radius: 3px; }
+    .checkbox input[type="checkbox"] {
+    display: none; }
+    .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .checkbox input[type="checkbox"]:checked + label {
+      background: #d3dce6;
+      color: #425E66;
+      padding: 5px 15px; }

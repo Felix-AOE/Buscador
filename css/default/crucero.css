@@ -1,0 +1,462 @@
+@charset "UTF-8";
+/*
+ |  tail.select - The vanilla solution to make your HTML select fields AWESOME!
+ |  @file       ./css/default/tail.select-light-feather.css
+ |  @author     SamBrishes <sam@pytes.net>
+ |  @version    0.5.16 - Beta
+ |
+ |  @website    https://github.com/pytesNET/tail.select
+ |  @license    X11 / MIT License
+ |  @copyright  Copyright © 2014 - 2019 SamBrishes, pytesNET <info@pytes.net>
+ */
+
+/* @start GENERAL */
+
+.tail-select3{
+    width: 90%;
+    margin: 1px;
+    position: relative;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.tail-select3 button{
+    outline: none;
+}
+/*Caracteristicas generales de los botones todos y ninguno*/
+.tail-select3 button.tail-all3, .tail-select3 button.tail-none3{
+    height: auto;
+    margin: 0 2px;
+    padding: 2px 6px;
+    font-size: 10px;
+    line-height: 14px;
+    text-shadow: none;
+    letter-spacing: 0;
+    text-transform: none;
+    vertical-align: top;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 3px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    transition: color 142ms linear, border 142ms linear, background 142ms linear;
+    -webkit-transition: color 142ms linear, border 142ms linear, background 142ms linear;
+}
+/*Propiedades de boton todos */
+.tail-select3 button.tail-all3{
+    color: rgba(48, 52, 56, 0.5);
+    border-color: rgba(48, 52, 56, 0.5);
+    background-color: transparent;
+}
+/*Efecto hover del boton todos*/
+.tail-select3 button.tail-all3:hover{
+    color: #62C462;
+    border-color: #62C462;
+    background-color: transparent;
+}
+/*Propiedades de boton todos */
+.tail-select3 button.tail-none3{
+    color: rgba(48, 52, 56, 0.5);
+    border-color: rgba(48, 52, 56, 0.5);
+    background-color: transparent;
+}
+/*Efecto hover del boton ninguno*/
+.tail-select3 button.tail-none3:hover{
+    color: #EE5F5B;
+    border-color: #EE5F5B;
+    background-color: transparent;
+}
+
+.tail-select3.disabled button.tail-all3{
+    color: rgba(48, 52, 56, 0.25);
+    border-color: rgba(48, 52, 56, 0.25);
+    background-color: transparent;
+}
+.tail-select3.disabled button.tail-none3{
+    color: rgba(48, 52, 56, 0.25);
+    border-color: rgba(48, 52, 56, 0.25);
+    background-color: transparent;
+}
+/*Input de texto del selector*/
+.tail-select3 input[type="text"]{
+    color: #303438;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 10px 15px;
+    outline: 0;
+    font-size: 12px;
+    line-height: 20px;
+    vertical-align: middle;
+    background-color: transparent;
+    border-width: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.tail-select3 input[type="text"]:hover{
+    color: #303438;
+    border-color: transparent;
+    background-color: transparent;
+}
+.tail-select3 input[type="text"]:focus{
+    color: #3C82E6;
+    border-color: transparent;
+    background-color: transparent;
+}
+.tail-select3.disabled input[type="text"]{
+    color: rgba(48, 52, 56, 0.75);
+    border-color: transparent;
+    background-color: transparent;
+}
+.tail-select-container3{
+    margin: 0;
+    padding: 3px;
+    text-align: left;
+}
+/*No esta en los controladores*/
+.tail-select-container3 .select-handle3{
+    width: auto;
+    color: #303438;
+    cursor: pointer;
+    margin: 1px;
+    padding: 0.2em 0.6em 0.3em;
+    /*display: none;*/
+    position: relative;
+    font-size: 11.844px;
+    text-align: left;
+    font-weight: bold;
+    line-height: 16px;
+    text-shadow: none;
+    vertical-align: top;
+    background-color: #d9d9d9;
+    border-width: 0;
+    border-style: solid;
+    border-color: transparent;
+   
+    transition: background 142ms linear;
+    -webkit-transition: background 142ms linear;
+}
+.tail-select-container3 .select-handle3:hover{
+    color: #303438;
+    background-color: #DC4650;
+}
+.tail-select-container3.select-label3 .select-handle3{
+    margin: 5px 3px;
+}
+/* @end GENERAL */
+
+/* @start LABEL */
+/*Input principal*/
+.tail-select3 .select-label3{
+    cursor: pointer;
+    color: rgba(48, 52, 56, 0.85);
+    width: 100%;
+    margin: 0;
+    padding: 5px 30px 5px 10px;
+    
+    z-index: 27;
+    position: relative;
+    text-align: left;
+    background-color: white;
+    border-width: 0px;
+    border-style: solid;
+}
+
+
+/*Flecha del input principal*/
+.tail-select3 .select-label3:after{
+    top: 15px;
+    right: 12px;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 25;
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    border-top: 5px dashed;
+    border-top: 5px solid\9;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    text-shadow: none;
+    transition: opacity 142ms linear, transform 142ms linear;
+    -webkit-transition: opacity 142ms linear, transform 142ms linear;
+}
+
+.tail-select3 .select-label3 .label-count3, .tail-select3 .select-label3 .label-inner3{
+    width: auto;
+    margin: 0;
+    text-align: left;
+    vertical-align: top;
+}
+/*Contador del input principal*/
+.tail-select3 .select-label3 .label-count3{
+    float: left;
+    color: rgba(48, 52, 56, 0.85);
+    margin: 0 5px 0 0;
+    padding: 0 7px 0 0;
+    display: none;
+    font-size: 11.844px;
+    font-weight: bold;
+    text-shadow: none;
+    white-space: nowrap;
+    vertical-align: top;
+    border-width: 0px 1px 0 0;
+    border-style: solid;
+    border-color: #d9d9d9;
+    border-radius: 0px;
+}
+/*contenedor del texto del input principal*/
+.tail-select3 .select-label3 .label-inner3{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.tail-select3:hover .select-label3, .tail-select2.idle3 .select-label3,
+.tail-select3.active .select-label3{
+    z-index: 25;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px #3C82E6;
+    -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px #3C82E6;
+}
+.tail-select3:hover .select-label3:after, .tail-select3.idle3 .select-label3:after,
+.tail-select3.active3 .select-label3:after{
+    opacity: 0.85;
+}
+.tail-select3:hover .select-label3 .label-count3, .tail-select3.idle3 .select-label3 .label-count3,
+.tail-select3.active3 .select-label3 .label-count3, .tail-select3:hover .select-label3 .label-inner3,
+.tail-select3.idle3 .select-label3 .label-inner3, .tail-select3.active3 .select-label3 .label-inner3{
+    opacity: 1;
+}
+.tail-select3.active3 .select-label3{
+    z-index: 27;
+}
+.tail-select3.active3 .select-label3:after{
+    opacity: 0.85;
+    transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+.tail-select3.disabled3 .select-label3{
+    cursor: not-allowed;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.35);
+}
+/* @end LABEL */
+
+/* @start DROPDOWN */
+/*Dropdown principal*/
+.tail-select3 .select-dropdown3{
+   top: 100%;
+    left: 0;
+    color: #303438;
+    /* Cambio de tamaño al hacer click  */
+    width: 100%;
+    /* Cambio de tamaño al hacer click  */
+    min-height: 35px;
+    margin: -1px 0 0 0;
+    padding: 0;
+    z-index: 30;
+    display: none; 
+    
+    position: absolute;
+    background-color: white;
+    border-width: 0px;
+    border-style: solid;
+    border-color: #d9d9d9;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.25);
+    animation-name: selector;
+    animation-duration: 5ms;  
+    max-height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+
+
+
+.tail-select3 .select-dropdown3 .dropdown-search3{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /*display: ;*/
+    position: relative;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #d9d9d9;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+.tail-select3 .select-dropdown3 .dropdown-inner3{
+    width: 100%;
+    margin: 0;
+    padding: 1px 0;
+   /* display: block;*/
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.tail-select3 .select-dropdown3 .dropdown-empty3{
+    margin: 0;
+    padding: 16px 0;
+    /*display: block;*/
+    font-size: 12px;
+    text-align: center;
+    line-height: 18px;
+}
+.tail-select3 .select-dropdown3 .dropdown-action3{
+    top: 3px;
+    right: 15px;
+    width: auto;
+    margin: 0;
+    padding: 7px 0;
+    z-index: 35;
+    
+    position: absolute;
+    text-align: center;
+}
+
+
+.tail-select3 .select-dropdown3 ul, .tail-select3 .select-dropdown3 ul li{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    list-style: none;
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: top;
+}
+
+
+
+
+.tail-select3 .select-dropdown3 ul li{
+    color: #425E66;
+    padding: 5px 10px 5px 5px;
+    font-size: 12px;
+    text-align: left;
+    line-height: 18px;
+    font-weight: normal;
+}
+
+/*margenes de las opciones */
+.tail-select3 .select-dropdown3 ul li:first-of-type{
+    margin-top: 0px;
+}
+.tail-select3 .select-dropdown3 ul li:last-of-type{
+    margin-bottom: 0px;
+}
+/*margenes de las opciones */
+
+.tail-select3 .select-dropdown3 ul li.optgroup-title3{
+    color: rgba(48, 52, 56, 0.7);
+    cursor: default;
+    margin: 9px 0 0 0;
+    padding-left: 10px;
+    font-size: 14px;
+    text-shadow: none;
+}
+.tail-select3 .select-dropdown3 ul li.optgroup-title3 button{
+    float: right;
+    margin-top: -2px;
+    opacity: 0;
+}
+.tail-select3 .select-dropdown3 ul:hover li button{
+    opacity: 1;
+}
+ul li.dropdown-option3{
+    cursor: pointer;
+    color: #303438;
+}
+
+.tail-select3 .select-dropdown3 ul li.dropdown-option3 .option-description3{
+    color: rgba(48, 52, 56, 0.85);
+    width: auto;
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-size: 10px;
+    text-align: left;
+    line-height: 14px;
+    vertical-align: top;
+}
+.tail-select3 .select-dropdown3 ul li.dropdown-option3:hover,
+.tail-select3 .select-dropdown3 ul li.dropdown-option3.hover{
+    color: #303438;
+}
+.tail-select3 .select-dropdown3 ul li.dropdown-option3:hover .option-description3,
+.tail-select3 .select-dropdown3 ul li.dropdown-option3.hover .option-description3{
+    color: #303438;
+}
+.tail-select3.open-top3 .select-dropdown3{
+    top: auto;
+    bottom: 100%;
+    margin: 0 0 -1px 0;
+    
+}
+.tail-select3.hide-selected3 .select-dropdown3 ul li.selected,
+.tail-select3.hide-disabled3 .select-dropdown3 ul li.disabled{
+    display: none;
+}
+
+.tail-select3 .select-dropdown3 ul li.dropdown-option3:hover:before,
+.tail-select3 .select-dropdown3 ul li.dropdown-option3.hover:before{
+    opacity: 0.5;
+}
+.tail-select3 .select-dropdown3 ul li.dropdown-option3.selected{
+    color: #3C82E6;
+    background-color: white;
+}
+
+.tail-select3 .select-dropdown3 ul li.dropdown-option3.selected .option-description3{
+    color: #3C82E6;
+}
+
+.tail-select3.deselect .select-dropdown3 ul li.dropdown-option3.selected:hover .option-description3,
+.tail-select3.deselect .select-dropdown3 ul li.dropdown-option3.selected.hover .option-description3{
+    color: #3C82E6;
+}
+.tail-select3 .select-dropdown3 ul li.dropdown-option3{
+    transition: all 0.3s ease-in;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: left;
+}
+.tail-select3 .select-dropdown3 ul li.dropdown-option3:hover,
+.tail-select3 .select-dropdown3 ul li.dropdown-option3.hover{
+    transition: all 0.4s ease;
+    background-color: #e9edf2;
+}
+.tail-select.disabled3 .select-dropdown3 ul li.dropdown-option3,
+.tail-select3 .select-dropdown3 ul li.dropdown-option3.disabled{
+    cursor: not-allowed;
+    color: rgba(48, 52, 56, 0.4);
+    text-shadow: 0px 1px 0px rgba(119, 129, 138, 0.1), 0px -1px 0px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+}
+
+.tail-select3.disabled .select-dropdown3 ul li.dropdown-option3 .option-description3,
+.tail-select3 .select-dropdown3 ul li.dropdown-option3.disabled3 .option-description3{
+    color: rgba(48, 52, 56, 0.4);
+}
+/* State & Icons :: Multiple */
+
+
+
+
+/*Para los botones*/
+
+.color_letra{
+    color:#425E66;
+    font-weight: bold;
+    font-size: 0.8em;
+    background-color:rgba(238, 242, 246, 0.5)
+}
+
+

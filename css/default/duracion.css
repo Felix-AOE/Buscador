@@ -12,8 +12,8 @@
 
 /* @start GENERAL */
 
-.tail-select3{
-    width: 90%;
+.tail-select{
+    width: 95%;
     margin: 1px;
     position: relative;
     font-size: 14px;
@@ -22,11 +22,11 @@
     font-weight: bold;
 }
 
-.tail-select3 button{
+.tail-select button{
     outline: none;
 }
 /*Caracteristicas generales de los botones todos y ninguno*/
-.tail-select3 button.tail-all3, .tail-select3 button.tail-none3{
+.tail-select button.tail-all, .tail-select button.tail-none{
     height: auto;
     margin: 0 2px;
     padding: 2px 6px;
@@ -46,42 +46,42 @@
     -webkit-transition: color 142ms linear, border 142ms linear, background 142ms linear;
 }
 /*Propiedades de boton todos */
-.tail-select3 button.tail-all3{
+.tail-select button.tail-all{
     color: rgba(48, 52, 56, 0.5);
     border-color: rgba(48, 52, 56, 0.5);
     background-color: transparent;
 }
 /*Efecto hover del boton todos*/
-.tail-select3 button.tail-all3:hover{
+.tail-select button.tail-all:hover{
     color: #62C462;
     border-color: #62C462;
     background-color: transparent;
 }
 /*Propiedades de boton todos */
-.tail-select3 button.tail-none3{
+.tail-select button.tail-none{
     color: rgba(48, 52, 56, 0.5);
     border-color: rgba(48, 52, 56, 0.5);
     background-color: transparent;
 }
 /*Efecto hover del boton ninguno*/
-.tail-select3 button.tail-none3:hover{
+.tail-select button.tail-none:hover{
     color: #EE5F5B;
     border-color: #EE5F5B;
     background-color: transparent;
 }
 
-.tail-select3.disabled button.tail-all3{
+.tail-select.disabled button.tail-all{
     color: rgba(48, 52, 56, 0.25);
     border-color: rgba(48, 52, 56, 0.25);
     background-color: transparent;
 }
-.tail-select3.disabled button.tail-none3{
+.tail-select.disabled button.tail-none{
     color: rgba(48, 52, 56, 0.25);
     border-color: rgba(48, 52, 56, 0.25);
     background-color: transparent;
 }
 /*Input de texto del selector*/
-.tail-select3 input[type="text"]{
+.tail-select input[type="text"]{
     color: #303438;
     width: 100%;
     height: auto;
@@ -99,28 +99,29 @@
     box-shadow: none;
     -webkit-box-shadow: none;
 }
-.tail-select3 input[type="text"]:hover{
+.tail-select input[type="text"]:hover{
     color: #303438;
     border-color: transparent;
     background-color: transparent;
 }
-.tail-select3 input[type="text"]:focus{
+.tail-select input[type="text"]:focus{
     color: #3C82E6;
     border-color: transparent;
     background-color: transparent;
 }
-.tail-select3.disabled input[type="text"]{
+.tail-select.disabled input[type="text"]{
     color: rgba(48, 52, 56, 0.75);
     border-color: transparent;
     background-color: transparent;
 }
-.tail-select-container3{
+.tail-select-container{
     margin: 0;
     padding: 3px;
     text-align: left;
+   
 }
 /*No esta en los controladores*/
-.tail-select-container3 .select-handle3{
+.tail-select-container .select-handle{
     width: auto;
     color: #303438;
     cursor: pointer;
@@ -138,22 +139,22 @@
     border-width: 0;
     border-style: solid;
     border-color: transparent;
-   
+    
     transition: background 142ms linear;
     -webkit-transition: background 142ms linear;
 }
-.tail-select-container3 .select-handle3:hover{
+.tail-select-container .select-handle:hover{
     color: #303438;
     background-color: #DC4650;
 }
-.tail-select-container3.select-label3 .select-handle3{
+.tail-select-container.select-label .select-handle{
     margin: 5px 3px;
 }
 /* @end GENERAL */
 
 /* @start LABEL */
 /*Input principal*/
-.tail-select3 .select-label3{
+.tail-select .select-label{
     cursor: pointer;
     color: rgba(48, 52, 56, 0.85);
     width: 100%;
@@ -166,11 +167,12 @@
     background-color: white;
     border-width: 0px;
     border-style: solid;
+    border-color: #d9d9d9;
 }
 
 
 /*Flecha del input principal*/
-.tail-select3 .select-label3:after{
+.tail-select .select-label:after{
     top: 15px;
     right: 12px;
     width: 0;
@@ -190,14 +192,14 @@
     -webkit-transition: opacity 142ms linear, transform 142ms linear;
 }
 
-.tail-select3 .select-label3 .label-count3, .tail-select3 .select-label3 .label-inner3{
+.tail-select .select-label .label-count, .tail-select .select-label .label-inner{
     width: auto;
     margin: 0;
     text-align: left;
     vertical-align: top;
 }
 /*Contador del input principal*/
-.tail-select3 .select-label3 .label-count3{
+.tail-select .select-label .label-count{
     float: left;
     color: rgba(48, 52, 56, 0.85);
     margin: 0 5px 0 0;
@@ -214,35 +216,35 @@
     border-radius: 0px;
 }
 /*contenedor del texto del input principal*/
-.tail-select3 .select-label3 .label-inner3{
+.tail-select .select-label .label-inner{
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.tail-select3:hover .select-label3, .tail-select2.idle3 .select-label3,
-.tail-select3.active .select-label3{
+.tail-select:hover .select-label, .tail-select.idle .select-label,
+.tail-select.active .select-label{
     z-index: 25;
     box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px #3C82E6;
     -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px #3C82E6;
 }
-.tail-select3:hover .select-label3:after, .tail-select3.idle3 .select-label3:after,
-.tail-select3.active3 .select-label3:after{
+.tail-select:hover .select-label:after, .tail-select.idle .select-label:after,
+.tail-select.active .select-label:after{
     opacity: 0.85;
 }
-.tail-select3:hover .select-label3 .label-count3, .tail-select3.idle3 .select-label3 .label-count3,
-.tail-select3.active3 .select-label3 .label-count3, .tail-select3:hover .select-label3 .label-inner3,
-.tail-select3.idle3 .select-label3 .label-inner3, .tail-select3.active3 .select-label3 .label-inner3{
+.tail-select:hover .select-label .label-count, .tail-select.idle .select-label .label-count,
+.tail-select.active .select-label .label-count, .tail-select:hover .select-label .label-inner,
+.tail-select.idle .select-label .label-inner, .tail-select.active .select-label .label-inner{
     opacity: 1;
 }
-.tail-select3.active3 .select-label3{
+.tail-select.active .select-label{
     z-index: 27;
 }
-.tail-select3.active3 .select-label3:after{
+.tail-select.active .select-label:after{
     opacity: 0.85;
     transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
 }
-.tail-select3.disabled3 .select-label3{
+.tail-select.disabled .select-label{
     cursor: not-allowed;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.35);
     -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.35);
@@ -251,7 +253,7 @@
 
 /* @start DROPDOWN */
 /*Dropdown principal*/
-.tail-select3 .select-dropdown3{
+.tail-select .select-dropdown{
    top: 100%;
     left: 0;
     color: #303438;
@@ -263,7 +265,6 @@
     padding: 0;
     z-index: 30;
     display: none; 
-    overflow: hidden;
     position: absolute;
     background-color: white;
     border-width: 0px;
@@ -273,11 +274,13 @@
     -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.25);
     animation-name: selector;
     animation-duration: 5ms;  
+    max-height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 
-
-.tail-select3 .select-dropdown3 .dropdown-search3{
+.tail-select .select-dropdown .dropdown-search{
     width: 100%;
     margin: 0;
     padding: 0;
@@ -289,7 +292,7 @@
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
-.tail-select3 .select-dropdown3 .dropdown-inner3{
+.tail-select .select-dropdown .dropdown-inner{
     width: 100%;
     margin: 0;
     padding: 1px 0;
@@ -297,7 +300,7 @@
     overflow-x: hidden;
     overflow-y: auto;
 }
-.tail-select3 .select-dropdown3 .dropdown-empty3{
+.tail-select .select-dropdown .dropdown-empty{
     margin: 0;
     padding: 16px 0;
     /*display: block;*/
@@ -305,7 +308,7 @@
     text-align: center;
     line-height: 18px;
 }
-.tail-select3 .select-dropdown3 .dropdown-action3{
+.tail-select .select-dropdown .dropdown-action{
     top: 3px;
     right: 15px;
     width: auto;
@@ -318,7 +321,7 @@
 }
 
 
-.tail-select3 .select-dropdown3 ul, .tail-select3 .select-dropdown3 ul li{
+.tail-select .select-dropdown ul, .tail-select .select-dropdown ul li{
     width: 100%;
     margin: 0;
     padding: 0;
@@ -331,9 +334,8 @@
 
 
 
-
-.tail-select3 .select-dropdown3 ul li{
-    color: #425E66;
+.tail-select .select-dropdown ul li{
+    color: #303438;
     padding: 5px 10px 5px 35px;
     font-size: 12px;
     text-align: left;
@@ -342,15 +344,15 @@
 }
 
 /*margenes de las opciones */
-.tail-select3 .select-dropdown3 ul li:first-of-type{
+.tail-select .select-dropdown ul li:first-of-type{
     margin-top: 0px;
 }
-.tail-select3 .select-dropdown3 ul li:last-of-type{
+.tail-select .select-dropdown ul li:last-of-type{
     margin-bottom: 0px;
 }
 /*margenes de las opciones */
 
-.tail-select3 .select-dropdown3 ul li.optgroup-title3{
+.tail-select .select-dropdown ul li.optgroup-title{
     color: rgba(48, 52, 56, 0.7);
     cursor: default;
     margin: 9px 0 0 0;
@@ -358,19 +360,19 @@
     font-size: 14px;
     text-shadow: none;
 }
-.tail-select3 .select-dropdown3 ul li.optgroup-title3 button{
+.tail-select .select-dropdown ul li.optgroup-title button{
     float: right;
     margin-top: -2px;
     opacity: 0;
 }
-.tail-select3 .select-dropdown3 ul:hover li button{
+.tail-select .select-dropdown ul:hover li button{
     opacity: 1;
 }
-ul li.dropdown-option3{
+ul li.dropdown-option{
     cursor: pointer;
     color: #303438;
 }
-li.dropdown-option3:before{
+li.dropdown-option:before{
     top: 0;
     left: 0;
     width: 30px;
@@ -388,7 +390,7 @@ li.dropdown-option3:before{
     transition: opacity 50ms linear;
     -webkit-transition: opacity 50ms linear;
 }
-.tail-select3 .select-dropdown3 ul li.dropdown-option3 .option-description3{
+.tail-select .select-dropdown ul li.dropdown-option .option-description{
     color: rgba(48, 52, 56, 0.85);
     width: auto;
     margin: 0;
@@ -399,63 +401,61 @@ li.dropdown-option3:before{
     line-height: 14px;
     vertical-align: top;
 }
-.tail-select3 .select-dropdown3 ul li.dropdown-option3:hover,
-.tail-select3 .select-dropdown3 ul li.dropdown-option3.hover{
+.tail-select .select-dropdown ul li.dropdown-option:hover,
+.tail-select .select-dropdown ul li.dropdown-option.hover{
     color: #303438;
 }
-.tail-select3 .select-dropdown3 ul li.dropdown-option3:hover .option-description3,
-.tail-select3 .select-dropdown3 ul li.dropdown-option3.hover .option-description3{
+.tail-select .select-dropdown ul li.dropdown-option:hover .option-description,
+.tail-select .select-dropdown ul li.dropdown-option.hover .option-description{
     color: #303438;
 }
-.tail-select3.open-top3 .select-dropdown3{
+.tail-select.open-top .select-dropdown{
     top: auto;
     bottom: 100%;
     margin: 0 0 -1px 0;
     
 }
-.tail-select3.hide-selected3 .select-dropdown3 ul li.selected,
-.tail-select3.hide-disabled3 .select-dropdown3 ul li.disabled{
+
+.tail-select .select-dropdown ul li.dropdown-option{
+    transition: all 0.3s ease-in;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: left;
+}
+
+.tail-select.hide-selected .select-dropdown ul li.selected,
+.tail-select.hide-disabled .select-dropdown ul li.disabled{
     display: none;
 }
 
-.tail-select3 .select-dropdown3 ul li.dropdown-option3:hover:before,
-.tail-select3 .select-dropdown3 ul li.dropdown-option3.hover:before{
+.tail-select .select-dropdown ul li.dropdown-option:hover:before,
+.tail-select .select-dropdown ul li.dropdown-option.hover:before{
     opacity: 0.5;
 }
-.tail-select3 .select-dropdown3 ul li.dropdown-option3.selected{
+.tail-select .select-dropdown ul li.dropdown-option.selected{
     color: #3C82E6;
     background-color: white;
 }
 
-.tail-select3 .select-dropdown3 ul li.dropdown-option3.selected .option-description3{
+.tail-select .select-dropdown ul li.dropdown-option.selected .option-description{
     color: #3C82E6;
 }
 
-.tail-select3.deselect .select-dropdown3 ul li.dropdown-option3.selected:hover .option-description3,
-.tail-select3.deselect .select-dropdown3 ul li.dropdown-option3.selected.hover .option-description3{
-    color: #3C82E6;
-}
-.tail-select3 .select-dropdown3 ul li.dropdown-option3{
+.tail-select .select-dropdown ul li.dropdown-option{
     transition: all 0.3s ease-in;
-    padding-left: 30%;
-    padding-right: 30%;
-    text-align: center;
 }
-.tail-select3 .select-dropdown3 ul li.dropdown-option3:hover,
-.tail-select3 .select-dropdown3 ul li.dropdown-option3.hover{
-    transition: all 0.4s ease;
-    background-color: #e9edf2;
+ background-color: #e9edf2;
 }
-.tail-select.disabled3 .select-dropdown3 ul li.dropdown-option3,
-.tail-select3 .select-dropdown3 ul li.dropdown-option3.disabled{
+.tail-select.disabled .select-dropdown ul li.dropdown-option,
+.tail-select .select-dropdown ul li.dropdown-option.disabled{
     cursor: not-allowed;
     color: rgba(48, 52, 56, 0.4);
     text-shadow: 0px 1px 0px rgba(119, 129, 138, 0.1), 0px -1px 0px rgba(0, 0, 0, 0.1);
     background-color: #fafafa;
 }
 
-.tail-select3.disabled .select-dropdown3 ul li.dropdown-option3 .option-description3,
-.tail-select3 .select-dropdown3 ul li.dropdown-option3.disabled3 .option-description3{
+.tail-select.disabled .select-dropdown ul li.dropdown-option .option-description,
+.tail-select .select-dropdown ul li.dropdown-option.disabled .option-description{
     color: rgba(48, 52, 56, 0.4);
 }
 /* State & Icons :: Multiple */
@@ -463,11 +463,16 @@ li.dropdown-option3:before{
 
 
 
-/*Para los botones*/
 
-.color_letra{
-    color:#425E66;
-    font-weight: bold;
-    font-size: 0.8em;
-    background-color:rgba(238, 242, 246, 0.5)
-}
+
+
+    /*TITULO DE DROPDOWN FECHA*/
+
+      .dropdown-optgroup > h5{
+        text-align: center;
+        font-family: inherit;
+        font-weight: bold;
+        color: #425E66;
+      }
+
+

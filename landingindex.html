@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+
+	<!-- CSS BUSCADOR -->
+
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+		
+		<script src="https://use.fontawesome.com/687d6a0a61.js"></script>
+
+
+        
+        <link href="css/default/fechas.css" rel="stylesheet" type="text/css" />
+        <link href="css/default/destino_salida.css" rel="stylesheet" type="text/css" />
+        <link href="css/default/crucero.css" rel="stylesheet" type="text/css" />
+        <link href="css/default/duracion.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- CSS BUSCADOR -->
+    <!-- JS BUSCADOR -->
+    	<!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <script>
+        	
+
+            document.addEventListener("DOMContentLoaded", function(event) {
+
+    			console.log("DOM fully loaded and parsed");
+
+    			const listado_evento = ["#select1","#select2","#select3"]
+    	
+    			listado_evento.forEach((value)=>{
+    				agregar_evento_abrir(value)
+    			})
+
+    			agregar_evento_select_duracion("#select4",".select-dropdown3")
+    			agregar_evento_select_duracion("#select5",".select-dropdown")
+
+  			});
+
+  			const agregar_evento_abrir = function(selector){
+  				
+  				if(!selector) throw new TypeError(`Variable selector invalida: ${selector}`)
+
+                const nodo = document.querySelector(selector)
+
+            	if(!nodo) throw new TypeError ("Selector invalido :(")
+
+
+                nodo.addEventListener("click", function (event){
+
+                	agregar_evento_quitar() 
+
+                	const that = this;
+                	that.style="width:100%;z-index:100"
+                	const nodo_padre = that.parentElement;
+                	const nodo_cuerpo = nodo_padre.querySelector(".select-dropdown2")
+
+                	if(nodo_cuerpo){
+                		nodo_cuerpo.style="display:block;width:100%;z-index:100"
+
+                	}else{
+                		console.error("No se pudo obtener el nodo .select-dropdown2")
+                	}
+
+                })
+  			}
+
+  			const agregar_evento_select_duracion = function (selector,clase){
+
+  				if(!(selector && clase)){
+  					throw new TypeError("Parametros invalidos")
+  				}
+
+  				const nodo = document.querySelector(selector)
+
+  				if(!nodo){
+  					throw new TypeError("Error al obtener el selector #select4")
+  				}
+
+  				nodo.addEventListener("click",(event)=>{
+
+  					agregar_evento_quitar();
+
+  					const that = this;
+  		  			const nodo = document.querySelector(clase)
+
+  					if(!nodo){
+  						throw new TypeError("Error al obtener el selector .select")
+  					}
+
+  					nodo.style="display:block"
+
+  				})
+
+  			}
+
+
+  			const quitar_evento_select_duracion = function(selector,clase){
+
+  				if(!(selector && clase)){
+  					throw new TypeError("Parametros invalidos")
+  				}
+
+
+  				const nodo = document.querySelector(selector)
+
+  				if(!nodo){
+  					throw new TypeError("Error al obtener el selector #select4")
+  				}
+
+  				const nodo_hijo = document.querySelector(clase)
+
+				if(!nodo_hijo){
+					throw new TypeError("Error al obtener el selector .select")
+				}
+
+  				nodo_hijo.style="display:none"
+
+
+  			}
+
+
+  			const agregar_evento_quitar = function(){
+
+  				const nodos = document.querySelectorAll("[data-open]")
+
+  				if(!nodos){
+  					throw new TypeError("Error al obtener el nodo")
+  				}
+
+  				const nodo_array = Array.from(nodos)
+
+  				nodo_array.forEach((nodo_actual)=>{
+  					nodo_actual.style="width:100%;z-index:27"
+  					const nodo_padre = nodo_actual.parentElement;
+                	const nodo_cuerpo = nodo_padre.querySelector(".select-dropdown2")
+
+                	if(nodo_cuerpo){
+                		nodo_cuerpo.style="display:none;z-index:27;width:100%"
+
+                	}else{
+                		console.error("No se pudo obtener el nodo .select-dropdown2")
+                	}
+
+  				})
+
+  				quitar_evento_select_duracion("#select4",".select-dropdown3")
+  				quitar_evento_select_duracion("#select5",".select-dropdown")
+
+
+  			}
+
+            </script>
+
+
+    <!-- JS BUSCADOR -->
+
+
+
+
+	<script type="text/javascript" src="//norwegianchile.cl/wp-content/plugins/revslider/public/assets/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="//norwegianchile.cl/wp-content/plugins/revslider/public/assets/js/extensions/revolution.extension.actions.min.js"></script>
+<script type="text/javascript" src="//norwegianchile.cl/wp-content/plugins/revslider/public/assets/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="//norwegianchile.cl/wp-content/plugins/revslider/public/assets/js/extensions/revolution.extension.navigation.min.js"></script>
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MX47JSJ');</script>
+<!-- End Google Tag Manager -->
+	<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://norwegianchile.cl/xmlrpc.php" />
+
+	<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+
+	<script>var et_site_url='https://norwegianchile.cl';var et_post_id='27';function et_core_page_resource_fallback(a,b){"undefined"===typeof b&&(b=a.sheet.cssRules&&0===a.sheet.cssRules.length);b&&(a.onerror=null,a.onload=null,a.href?a.href=et_site_url+"/?et_core_page_resource="+a.id+et_post_id:a.src&&(a.src=et_site_url+"/?et_core_page_resource="+a.id+et_post_id))}
+</script><title>Home - Norwegian Chile</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v13.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<link rel="canonical" href="https://norwegianchile.cl/" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Home - Norwegian Chile" />
+<meta property="og:url" content="https://norwegianchile.cl/" />
+<meta property="og:site_name" content="Norwegian Chile" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Home - Norwegian Chile" />
+<meta name="twitter:image" content="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://norwegianchile.cl/#organization","name":"Norwegian Cruise Line Chile","url":"https://norwegianchile.cl/","sameAs":["https://www.facebook.com/norwegianchile/","https://www.instagram.com/norwegianchile/"],"logo":{"@type":"ImageObject","@id":"https://norwegianchile.cl/#logo","inLanguage":"es","url":"https://norwegianchile.cl/wp-content/uploads/og-3111.png","width":1000,"height":264,"caption":"Norwegian Cruise Line Chile"},"image":{"@id":"https://norwegianchile.cl/#logo"}},{"@type":"WebSite","@id":"https://norwegianchile.cl/#website","url":"https://norwegianchile.cl/","name":"Norwegian Chile","inLanguage":"es","description":"Encuentra el mejor crucero para tus vacaciones so\u00f1adas | Marketline","publisher":{"@id":"https://norwegianchile.cl/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://norwegianchile.cl/?s={search_term_string}","query-input":"required name=search_term_string"}]},{"@type":"ImageObject","@id":"https://norwegianchile.cl/#primaryimage","inLanguage":"es","url":"https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg","width":128,"height":6},{"@type":"WebPage","@id":"https://norwegianchile.cl/#webpage","url":"https://norwegianchile.cl/","name":"Home - Norwegian Chile","isPartOf":{"@id":"https://norwegianchile.cl/#website"},"inLanguage":"es","about":{"@id":"https://norwegianchile.cl/#organization"},"primaryImageOfPage":{"@id":"https://norwegianchile.cl/#primaryimage"},"datePublished":"2019-03-08T18:43:28+00:00","dateModified":"2020-03-12T14:16:32+00:00","potentialAction":[{"@type":"ReadAction","target":["https://norwegianchile.cl/"]}]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Norwegian Chile &raquo; Feed" href="https://norwegianchile.cl/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Norwegian Chile &raquo; Feed de los comentarios" href="https://norwegianchile.cl/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/norwegianchile.cl\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3.2"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<meta content="Cliente Greenti v.2.0" name="generator"/><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://norwegianchile.cl/wp-includes/css/dist/block-library/style.min.css?ver=5.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css'  href='https://norwegianchile.cl/wp-content/plugins/revslider/public/assets/css/settings.css?ver=5.4.8.1' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+<link rel='stylesheet' id='divi-style-css'  href='https://norwegianchile.cl/wp-content/themes/Divi-child/style.css?ver=3.20.2' type='text/css' media='all' />
+<link rel='stylesheet' id='et-builder-googlefonts-cached-css'  href='https://fonts.googleapis.com/css?family=Roboto+Slab%3A100%2C300%2Cregular%2C700%7CLato%3A100%2C100italic%2C300%2C300italic%2Cregular%2Citalic%2C700%2C700italic%2C900%2C900italic&#038;ver=5.3.2#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://norwegianchile.cl/wp-includes/css/dashicons.min.css?ver=5.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='parent-style-css'  href='https://norwegianchile.cl/wp-content/themes/Divi/style.css?ver=5.3.2' type='text/css' media='all' />
+<script type='text/javascript' src='https://norwegianchile.cl/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='https://norwegianchile.cl/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://norwegianchile.cl/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js?ver=5.4.8.1'></script>
+<script type='text/javascript' src='https://norwegianchile.cl/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.4.8.1'></script>
+<script type='text/javascript' src='https://norwegianchile.cl/wp-content/plugins/wonderplugin-lightbox/engine/wonderpluginlightbox.js?ver=7.4'></script>
+<link rel='https://api.w.org/' href='https://norwegianchile.cl/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://norwegianchile.cl/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://norwegianchile.cl/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.3.2" />
+<link rel='shortlink' href='https://norwegianchile.cl/' />
+<link rel="alternate" type="application/json+oembed" href="https://norwegianchile.cl/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnorwegianchile.cl%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://norwegianchile.cl/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnorwegianchile.cl%2F&#038;format=xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><meta name="generator" content="Powered by Slider Revolution 5.4.8.1 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"><link rel="icon" href="https://norwegianchile.cl/wp-content/uploads/logo-fav-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://norwegianchile.cl/wp-content/uploads/logo-fav.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://norwegianchile.cl/wp-content/uploads/logo-fav.png" />
+<meta name="msapplication-TileImage" content="https://norwegianchile.cl/wp-content/uploads/logo-fav.png" />
+<script type="text/javascript">function setREVStartSize(e){									
+try{ e.c=jQuery(e.c);var i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
+	if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})
+}catch(d){console.log("Failure at Presize of Slider:"+d)}};
+</script>
+<link rel="stylesheet" id="et-core-unified-cached-inline-styles" href="https://norwegianchile.cl/wp-content/cache/et/27/et-core-unified-158646910839.min.css" onerror="et_core_page_resource_fallback(this, true)" onload="et_core_page_resource_fallback(this)" /><meta name="google-site-verification" content="jbzRf4Ew7vNXqUwp-4q0bPmxUwggAEqaqiEq1u306rA" />
+<script type="text/javascript" src="//norwegianchile.cl/wp-content/plugins/revslider/public/assets/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="//norwegianchile.cl/wp-content/plugins/revslider/public/assets/js/extensions/revolution.extension.actions.min.js"></script>
+<script type="text/javascript" src="//norwegianchile.cl/wp-content/plugins/revslider/public/assets/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="//norwegianchile.cl/wp-content/plugins/revslider/public/assets/js/extensions/revolution.extension.navigation.min.js"></script>
+</head>
+<body class="home page-template-default page page-id-27 et_button_no_icon et_pb_button_helper_class et_fullwidth_nav et_fixed_nav et_show_nav et_hide_fixed_logo et_cover_background et_secondary_nav_enabled et_secondary_nav_only_menu et_pb_gutter windows et_pb_gutters3 et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_pb_footer_columns3 et_header_style_centered et_pb_pagebuilder_layout et_right_sidebar et_divi_theme et-db et_minified_js et_minified_css">
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX47JSJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div id="page-container">
+
+					<div id="top-header">
+			<div class="container clearfix">
+
+			
+				<div id="et-secondary-menu">
+				<ul id="et-secondary-nav" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141"><a href="tel:+56223352823"><i class="fa fa-phone"></i> +562 2335 2823 <img src="https://norwegianchile.cl/wp-content/uploads/bandera-chile-26ce49a3ab2ba8fc266d1bede3b31644ed9df2cae161e2cf8df3a2dffbc61c6b.png" class="bandera"></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-615"><a href="https://norwegianchile.cl/tranquilidad-norwegian-2/">Tranquilidad Norwegian</a></li>
+</ul>				</div> <!-- #et-secondary-menu -->
+
+			</div> <!-- .container -->
+		</div> <!-- #top-header -->
+		
+	
+			<header id="main-header" data-height-onload="100">
+			<div class="container-fluid clearfix et_menu_container">
+							<div class="logo_container">
+					<span class="logo_helper"></span>
+					<a href="https://norwegianchile.cl/">
+						<img src="https://norwegianchile.cl/wp-content/uploads/Logo-nor-blanco.png" alt="Norwegian Chile" id="logo" data-height-percentage="70" />
+					</a>
+				</div>
+							<div id="et-top-navigation" data-height="100" data-fixed-height="50">
+											<nav id="top-menu-nav">
+						<ul id="top-menu" class="nav"><li id="menu-item-639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639"><a href="https://norwegianchile.cl/tranquilidad-norwegian-2/">PROGRAMA COMPRA TRANQUILO</a></li>
+<li id="menu-item-110" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-110"><a href="#porque">Por qué Norwegian</a></li>
+<li id="menu-item-546" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-546"><a href="https://norwegianchile.cl/asistencia-en-reservas/">Reservas</a></li>
+<li id="menu-item-111" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-111"><a href="#destinos">Destinos</a></li>
+<li id="menu-item-113" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-113"><a href="#abordo">Vida a bordo</a></li>
+<li id="menu-item-112" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-112"><a href="#barcos">Barcos</a></li>
+<li id="menu-item-186" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-186"><a href="https://norwegianchile.cl/promociones/">Promociones</a></li>
+<li id="menu-item-290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-290"><a href="https://norwegianchile.cl/contacto/">Contacto</a></li>
+</ul>						</nav>
+
+<!--
+					
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+					
+					
+					
+					<div id="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="select_page">Seleccionar página</span>
+					<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+				</div>
+			</div>				</div> <!-- #et-top-navigation -->
+			</div> <!-- .container -->
+			<div class="et_search_outer">
+				<div class="container et_search_form_container">
+					<form role="search" method="get" class="et-search-form" action="https://norwegianchile.cl/">
+					<input type="search" class="et-search-field" placeholder="Búsqueda &hellip;" value="" name="s" title="Buscar:" />					</form>
+					<span class="et_close_search_field"></span>
+				</div>
+			</div>
+		</header> <!-- #main-header -->
+			<div id="et-main-area">
+	
+<div id="main-content">
+
+
+			
+				<article id="post-27" class="post-27 page type-page status-publish hentry">
+
+				
+					<div class="entry-content">
+					<div id="et-boc" class="et-boc">
+			
+			<div class="et_builder_inner_content et_pb_gutters3">
+				<div class="et_pb_section et_pb_section_0 et_pb_fullwidth_section et_section_regular">
+				
+				
+				
+				
+					<div class="et_pb_module et_pb_fullwidth_code et_pb_fullwidth_code_0">
+				
+				
+				<div class="et_pb_code_inner">
+					<link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet" property="stylesheet" type="text/css" media="all">
+<div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-source="gallery" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+<!-- START REVOLUTION SLIDER 5.4.8.1 auto mode -->
+	<div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.8.1">
+<ul>	<!-- SLIDE  -->
+	<li data-index="rs-8" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-link="https://norwegianchile.cl/promociones/"   data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img src="https://norwegianchile.cl/wp-content/plugins/revslider/admin/assets/images/transparent.png"  alt="Norwegian-cruise-oferta-marzo-2020" title="Norwegian-cruise-oferta-marzo-2020"  width="1600" height="635" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-8-layer-3" 
+			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','-636']" 
+			 data-y="['top','top','top','top']" data-voffset="['0','0','0','-39']" 
+						data-width="full-proportional"
+			data-height="full-proportional"
+			data-whitespace="nowrap"
+			data-visibility="['on','on','off','off']"
+ 
+			data-type="image" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 5;"><img src="https://norwegianchile.cl/wp-content/uploads/Promocion-NORWEGIAN-Chile.jpg" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" width="1600" height="635" data-no-retina> </div>
+
+		<!-- LAYER NR. 2 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-8-layer-4" 
+			 data-x="['center','center','center','center']" data-hoffset="['716','716','0','0']" 
+			 data-y="['bottom','bottom','top','top']" data-voffset="['-132','-132','0','0']" 
+						data-width="full-proportional"
+			data-height="full-proportional"
+			data-whitespace="nowrap"
+			data-visibility="['off','off','on','on']"
+ 
+			data-type="image" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 7;"><img src="https://norwegianchile.cl/wp-content/uploads/Promocion-NCL-Chile-Mobile.jpg" alt="Promocion-NCL-Chile" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" width="800" height="720" data-no-retina> </div>
+
+		<!-- LAYER NR. 3 -->
+		<div class="tp-caption large_bold_white   tp-resizeme" 
+			 id="slide-8-layer-9" 
+			 data-x="['left','left','left','left']" data-hoffset="['14','14','14','14']" 
+			 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','0']" 
+						data-width="['289','289','289','409']"
+			data-height="['31','31','31','none']"
+			data-whitespace="nowrap"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 9; min-width: 289px; max-width: 289px; max-width: 31px; max-width: 31px; white-space: nowrap; font-size: 20px; line-height: 40px; letter-spacing: 0px;">  MÁS INFORMACIÓN EN PROMOCIONES </div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-index="rs-11" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-link="https://norwegianchile.cl/tranquilidad-norwegian-2/"   data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img src="https://norwegianchile.cl/wp-content/plugins/revslider/admin/assets/images/transparent.png"  alt="Norwegian-cruise-oferta-marzo-2020" title="Norwegian-cruise-oferta-marzo-2020"  width="1600" height="635" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 4 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-11-layer-3" 
+			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','-636']" 
+			 data-y="['top','top','top','top']" data-voffset="['0','0','0','-39']" 
+						data-width="full-proportional"
+			data-height="full-proportional"
+			data-whitespace="nowrap"
+			data-visibility="['on','on','off','off']"
+ 
+			data-type="image" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 5;"><img src="https://norwegianchile.cl/wp-content/uploads/Reserve-tranquilo_slide_PC_2.png" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" width="1200" height="476" data-no-retina> </div>
+
+		<!-- LAYER NR. 5 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-11-layer-4" 
+			 data-x="['center','center','center','center']" data-hoffset="['716','716','0','0']" 
+			 data-y="['bottom','bottom','top','top']" data-voffset="['-132','-132','0','0']" 
+						data-width="full-proportional"
+			data-height="full-proportional"
+			data-whitespace="nowrap"
+			data-visibility="['off','off','on','on']"
+ 
+			data-type="image" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 6;"><img src="https://norwegianchile.cl/wp-content/uploads/Reserve-tranquilo_slide-movil_1.png" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" width="720" height="800" data-no-retina> </div>
+
+		<!-- LAYER NR. 6 -->
+		<div class="tp-caption large_bold_white   tp-resizeme" 
+			 id="slide-11-layer-9" 
+			 data-x="['left','left','left','left']" data-hoffset="['14','14','14','14']" 
+			 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','0']" 
+						data-width="['289','289','289','409']"
+			data-height="['31','31','31','none']"
+			data-whitespace="nowrap"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 7; min-width: 289px; max-width: 289px; max-width: 31px; max-width: 31px; white-space: nowrap; font-size: 20px; line-height: 40px; letter-spacing: 0px;">  MÁS INFORMACIÓN EN TRANQUILIDAD NORWEGIAN </div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-index="rs-12" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-link="https://norwegianchile.cl/tranquilidad-norwegian-2/"   data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img src="https://norwegianchile.cl/wp-content/plugins/revslider/admin/assets/images/transparent.png"  alt="Norwegian-cruise-oferta-marzo-2020" title="Norwegian-cruise-oferta-marzo-2020"  width="1600" height="635" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 7 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-12-layer-3" 
+			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','-636']" 
+			 data-y="['top','top','top','top']" data-voffset="['0','0','0','-39']" 
+						data-width="full-proportional"
+			data-height="full-proportional"
+			data-whitespace="nowrap"
+			data-visibility="['on','on','off','off']"
+ 
+			data-type="image" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 5;"><img src="https://norwegianchile.cl/wp-content/uploads/Por-que-NCL2_Slide_Pc.png" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" width="1201" height="476" data-no-retina> </div>
+
+		<!-- LAYER NR. 8 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-12-layer-4" 
+			 data-x="['center','center','center','center']" data-hoffset="['716','716','0','0']" 
+			 data-y="['bottom','bottom','top','top']" data-voffset="['-132','-132','0','0']" 
+						data-width="full-proportional"
+			data-height="full-proportional"
+			data-whitespace="nowrap"
+			data-visibility="['off','off','on','on']"
+ 
+			data-type="image" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 6;"><img src="https://norwegianchile.cl/wp-content/uploads/Por-que-NCL2_Slide_movil.png" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" width="720" height="800" data-no-retina> </div>
+
+		<!-- LAYER NR. 9 -->
+		<div class="tp-caption large_bold_white   tp-resizeme" 
+			 id="slide-12-layer-9" 
+			 data-x="['left','left','left','left']" data-hoffset="['14','14','14','14']" 
+			 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','0']" 
+						data-width="['289','289','289','409']"
+			data-height="['31','31','31','none']"
+			data-whitespace="nowrap"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 7; min-width: 289px; max-width: 289px; max-width: 31px; max-width: 31px; white-space: nowrap; font-size: 20px; line-height: 40px; letter-spacing: 0px;">  MÁS INFORMACIÓN EN TRANQUILIDAD NORWEGIAN </div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-index="rs-14" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-link="https://norwegianchile.cl/tranquilidad-norwegian-2/"   data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img src="https://norwegianchile.cl/wp-content/plugins/revslider/admin/assets/images/transparent.png"  alt="Norwegian-cruise-oferta-marzo-2020" title="Norwegian-cruise-oferta-marzo-2020"  width="1600" height="635" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 10 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-14-layer-3" 
+			 data-x="['center','center','center','center']" data-hoffset="['6','0','0','-636']" 
+			 data-y="['top','top','top','top']" data-voffset="['-4','0','0','-39']" 
+						data-width="full-proportional"
+			data-height="full-proportional"
+			data-whitespace="nowrap"
+			data-visibility="['on','on','off','off']"
+ 
+			data-type="image" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 5;"><img src="https://norwegianchile.cl/wp-content/uploads/Por-que-NCL_Slide-Pc.png" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" width="1201" height="476" data-no-retina> </div>
+<!--
+		<!-- LAYER NR. 11 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-14-layer-4" 
+			 data-x="['center','center','center','center']" data-hoffset="['716','716','0','0']" 
+			 data-y="['bottom','bottom','top','bottom']" data-voffset="['-132','-132','0','0']" 
+						data-width="full-proportional"
+			data-height="full-proportional"
+			data-whitespace="nowrap"
+			data-visibility="['off','off','on','on']"
+ 
+			data-type="image" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 6;"><img src="https://norwegianchile.cl/wp-content/uploads/Por-que-NCL_Slide_movil.png" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" width="720" height="800" data-no-retina> </div>
+
+		<!-- LAYER NR. 12 -->
+		<div class="tp-caption large_bold_white   tp-resizeme" 
+			 id="slide-14-layer-9" 
+			 data-x="['left','left','left','left']" data-hoffset="['14','14','14','14']" 
+			 data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','0']" 
+						data-width="['289','289','289','409']"
+			data-height="['31','31','31','none']"
+			data-whitespace="nowrap"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 7; min-width: 289px; max-width: 289px; max-width: 31px; max-width: 31px; white-space: nowrap; font-size: 20px; line-height: 40px; letter-spacing: 0px;">  MÁS INFORMACIÓN EN TRANQUILIDAD NORWEGIAN </div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-index="rs-4" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="https://norwegianchile.cl/wp-content/uploads/norwegian-slide-3n-100x50.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img src="https://norwegianchile.cl/wp-content/uploads/norwegian-slide-3n.jpg"  alt="" title="norwegian-slide-3n"  width="1600" height="635" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 13 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-4-layer-1" 
+			 data-x="['right','left','left','center']" data-hoffset="['1029','44','32','-143']" 
+			 data-y="['middle','middle','middle','top']" data-voffset="['0','0','0','206']" 
+						data-width="none"
+			data-height="none"
+			data-whitespace="nowrap"
+ 
+			data-type="image" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+			data-textAlign="['inherit','inherit','inherit','inherit']"
+			data-paddingtop="[0,0,0,0]"
+			data-paddingright="[0,0,0,0]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[0,0,0,0]"
+
+			style="z-index: 5;"><img src="https://norwegianchile.cl/wp-content/uploads/aventuras-a-bordo.png" alt="" data-ww="['468px','441px','441px','468px']" data-hh="['141px','133px','133px','141px']" width="855" height="246" data-no-retina> </div>
+	</li>
+</ul>
+<script>var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss="";
+						if(htmlDiv) {
+							htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+						}else{
+							var htmlDiv = document.createElement("div");
+							htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+							document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+						}
+					</script>
+<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
+<script>var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss=".tp-caption.large_bold_white,.large_bold_white{font-size:58px;line-height:60px;font-weight:800;font-family:\"Open Sans\";color:rgb(255,255,255);text-decoration:none;background-color:transparent;border-width:0px;border-color:rgb(255,214,88);border-style:none}";
+				if(htmlDiv) {
+					htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+				}else{
+					var htmlDiv = document.createElement("div");
+					htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+					document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+				}
+			</script>
+		<script type="text/javascript">
+if (setREVStartSize!==undefined) setREVStartSize(
+	{c: '#rev_slider_1_1', responsiveLevels: [1240,1024,778,480], gridwidth: [1600,1200,778,800], gridheight: [635,476,500,720], sliderLayout: 'auto'});
+			
+var revapi1,
+	tpj;	
+(function() {			
+	if (!/loaded|interactive|complete/.test(document.readyState)) document.addEventListener("DOMContentLoaded",onLoad); else onLoad();	
+	function onLoad() {				
+		if (tpj===undefined) { tpj = jQuery; if("off" == "on") tpj.noConflict();}
+	if(tpj("#rev_slider_1_1").revolution == undefined){
+		revslider_showDoubleJqueryError("#rev_slider_1_1");
+	}else{
+		revapi1 = tpj("#rev_slider_1_1").show().revolution({
+			sliderType:"standard",
+			jsFileLocation:"//norwegianchile.cl/wp-content/plugins/revslider/public/assets/js/",
+			sliderLayout:"auto",
+			dottedOverlay:"none",
+			delay:5000,
+			navigation: {
+				keyboardNavigation:"off",
+				keyboard_direction: "horizontal",
+				mouseScrollNavigation:"off",
+ 							mouseScrollReverse:"default",
+				onHoverStop:"off",
+				arrows: {
+					style:"uranus",
+					enable:true,
+					hide_onmobile:false,
+					hide_onleave:false,
+					tmp:'',
+					left: {
+						h_align:"left",
+						v_align:"center",
+						h_offset:20,
+						v_offset:0
+					},
+					right: {
+						h_align:"right",
+						v_align:"center",
+						h_offset:20,
+						v_offset:0
+					}
+				}
+				,
+				bullets: {
+					enable:true,
+					hide_onmobile:false,
+					style:"hesperiden",
+					hide_onleave:false,
+					direction:"horizontal",
+					h_align:"center",
+					v_align:"bottom",
+					h_offset:0,
+					v_offset:20,
+					space:5,
+					tmp:''
+				}
+			},
+			responsiveLevels:[1240,1024,778,480],
+			visibilityLevels:[1240,1024,778,480],
+			gridwidth:[1600,1200,778,800],
+			gridheight:[635,476,500,720],
+			lazyType:"none",
+			shadow:0,
+			spinner:"spinner0",
+			stopLoop:"off",
+			stopAfterLoops:-1,
+			stopAtSlide:-1,
+			shuffle:"off",
+			autoHeight:"off",
+			disableProgressBar:"on",
+			hideThumbsOnMobile:"off",
+			hideSliderAtLimit:0,
+			hideCaptionAtLimit:0,
+			hideAllCaptionAtLilmit:0,
+			debugMode:false,
+			fallbacks: {
+				simplifyAll:"off",
+				nextSlideOnWindowFocus:"off",
+				disableFocusListener:false,
+			}
+		});
+	}; /* END OF revapi call */
+	
+ }; /* END OF ON LOAD FUNCTION */
+}()); /* END OF WRAPPING FUNCTION */
+</script>
+		<script>
+					var htmlDivCss = unescape("%23rev_slider_1_1%20.uranus.tparrows%20%7B%0A%20%20width%3A50px%3B%0A%20%20height%3A50px%3B%0A%20%20background%3Argba%28255%2C255%2C255%2C0%29%3B%0A%20%7D%0A%20%23rev_slider_1_1%20.uranus.tparrows%3Abefore%20%7B%0A%20width%3A50px%3B%0A%20height%3A50px%3B%0A%20line-height%3A50px%3B%0A%20font-size%3A40px%3B%0A%20transition%3Aall%200.3s%3B%0A-webkit-transition%3Aall%200.3s%3B%0A%20%7D%0A%20%0A%20%20%23rev_slider_1_1%20.uranus.tparrows%3Ahover%3Abefore%20%7B%0A%20%20%20%20opacity%3A0.75%3B%0A%20%20%7D%0A.hesperiden.tp-bullets%20%7B%0A%7D%0A.hesperiden.tp-bullets%3Abefore%20%7B%0A%09content%3A%22%20%22%3B%0A%09position%3Aabsolute%3B%0A%09width%3A100%25%3B%0A%09height%3A100%25%3B%0A%09background%3Atransparent%3B%0A%09padding%3A10px%3B%0A%09margin-left%3A-10px%3Bmargin-top%3A-10px%3B%0A%09box-sizing%3Acontent-box%3B%0A%20%20%20border-radius%3A8px%3B%0A%20%20%0A%7D%0A.hesperiden%20.tp-bullet%20%7B%0A%09width%3A12px%3B%0A%09height%3A12px%3B%0A%09position%3Aabsolute%3B%0A%09background%3A%20rgb%28153%2C%20153%2C%20153%29%3B%20%2F%2A%20old%20browsers%20%2A%2F%0A%20%20%20%20background%3A%20-moz-linear-gradient%28top%2C%20%20rgb%28153%2C%20153%2C%20153%29%200%25%2C%20rgb%28225%2C%20225%2C%20225%29%20100%25%29%3B%20%2F%2A%20ff3.6%2B%20%2A%2F%0A%20%20%20%20background%3A%20-webkit-linear-gradient%28top%2C%20%20rgb%28153%2C%20153%2C%20153%29%200%25%2Crgb%28225%2C%20225%2C%20225%29%20100%25%29%3B%20%2F%2A%20chrome10%2B%2Csafari5.1%2B%20%2A%2F%0A%20%20%20%20background%3A%20-o-linear-gradient%28top%2C%20%20rgb%28153%2C%20153%2C%20153%29%200%25%2Crgb%28225%2C%20225%2C%20225%29%20100%25%29%3B%20%2F%2A%20opera%2011.10%2B%20%2A%2F%0A%20%20%20%20background%3A%20-ms-linear-gradient%28top%2C%20%20rgb%28153%2C%20153%2C%20153%29%200%25%2Crgb%28225%2C%20225%2C%20225%29%20100%25%29%3B%20%2F%2A%20ie10%2B%20%2A%2F%0A%20%20%20%20background%3A%20linear-gradient%28to%20bottom%2C%20%20rgb%28153%2C%20153%2C%20153%29%200%25%2Crgb%28225%2C%20225%2C%20225%29%20100%25%29%3B%20%2F%2A%20w3c%20%2A%2F%0A%20%20%20%20filter%3A%20progid%3Adximagetransform.microsoft.gradient%28%20%0A%20%20%20%20startcolorstr%3D%22rgb%28153%2C%20153%2C%20153%29%22%2C%20endcolorstr%3D%22rgb%28225%2C%20225%2C%20225%29%22%2Cgradienttype%3D0%20%29%3B%20%2F%2A%20ie6-9%20%2A%2F%0A%09border%3A3px%20solid%20rgb%28229%2C%20229%2C%20229%29%3B%0A%09border-radius%3A50%25%3B%0A%09cursor%3A%20pointer%3B%0A%09box-sizing%3Acontent-box%3B%0A%7D%0A.hesperiden%20.tp-bullet%3Ahover%2C%0A.hesperiden%20.tp-bullet.selected%20%7B%0A%09background%3Argb%28102%2C%20102%2C%20102%29%3B%0A%7D%0A.hesperiden%20.tp-bullet-image%20%7B%0A%7D%0A.hesperiden%20.tp-bullet-title%20%7B%0A%7D%0A%0A");
+					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+					if(htmlDiv) {
+						htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+					}
+					else{
+						var htmlDiv = document.createElement('div');
+						htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+					}
+				  </script>
+				</div><!-- END REVOLUTION SLIDER -->
+				</div>
+			</div> <!-- .et_pb_fullwidth_code -->
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_1 et_section_regular">
+				
+				
+				
+				
+					<div id="porque" class="et_pb_row et_pb_row_0 et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_3_5 et_pb_column_0    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_0 et_always_center_on_mobile">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://norwegianchile.cl/wp-content/uploads/viaje-con-libertad.jpg" alt="Norwegian Cruise Line Chile" title="Vacaciones en crucero Norwegian Cruise Line Chile" /></span>
+			</div>
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_2_5 et_pb_column_1    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_0 et_pb_bg_layout_light  et_pb_text_align_justified">
+				
+				
+				<div class="et_pb_text_inner">
+					<p style="text-align: center;">¿POR QUÉ NORWEGIAN?</p>
+<h1 style="text-align: center;">VIAJE CON LIBERTAD</h1>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_image et_pb_image_1 et_always_center_on_mobile">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://norwegianchile.cl/wp-content/uploads/ncl-wave-b.png" alt="" /></span>
+			</div><div class="et_pb_module et_pb_divider_0 et_clickable et_pb_space et_pb_divider_hidden"><div class="et_pb_divider_internal"></div></div><div class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module ">
+				<a class="et_pb_button et_pb_button_0 et_pb_bg_layout_light" href="https://norwegianchile.cl/tranquilidad-norwegian-2/">Cancela hasta 48 horas antes</a>
+			</div><div class="et_pb_module et_pb_text et_pb_text_1 et_pb_bg_layout_light  et_pb_text_align_justified">
+				
+				
+				<div class="et_pb_text_inner">
+					<p>Imagine un crucero tal y como lo desea: sin horarios que cumplir más que los suyos. Esa es la libertad que Norwegian Cruise Line ofrece en todos nuestros itinerarios. Elija entre diferentes opciones de restaurants sin asientos preasignados o quizás prefiera la emoción de uno de nuestros galardonados espectáculos. Relájese en algunos de los camarotes más amplios y modernos de la industria de los cruceros antes de elegir la aventura a bordo que prefiera.</p>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_center et_pb_module ">
+				<a class="et_pb_button et_pb_button_1 et_pb_bg_layout_light" href="https://reservas.norwegianchile.cl/">Ver más</a>
+			</div>
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div id="destinos" class="et_pb_row et_pb_row_1 et_pb_gutters1 et_pb_row_fullwidth">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_2    et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_2 et_pb_bg_layout_light  et_pb_text_align_justified">
+				
+				
+				<div class="et_pb_text_inner">
+					<p style="text-align: center;">DESTINOS</p>
+<h2 style="text-align: center;">¿QUIERES CAMBIAR<br /> DE PAISAJE?</h2>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_image et_pb_image_2 et_always_center_on_mobile">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://norwegianchile.cl/wp-content/uploads/ncl-wave-b.png" alt="" /></span>
+			</div>
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_2 et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_3_5 et_pb_column_3    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_3 et_hover_enabled et_clickable et_pb_bg_layout_dark  et_pb_text_align_center">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>HAWAI</h3>
+<p><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 alignnone size-full" /></p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_2_5 et_pb_column_4    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_4 et_clickable et_pb_bg_layout_dark  et_pb_text_align_center">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>CARIBE</h3>
+<p><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 aligncenter size-full" /></p>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_text et_pb_text_5 et_clickable et_pb_bg_layout_dark  et_pb_text_align_center">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>ISLAS<br /> GRIEGAS</h3>
+<p><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 aligncenter size-full" /></p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_3 et_pb_row_fullwidth">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_5    et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_button_module_wrapper et_pb_button_2_wrapper et_pb_button_alignment_center et_pb_module ">
+				<a class="et_pb_button et_pb_button_2 et_pb_bg_layout_light" href="https://reservas.norwegianchile.cl/">Ver Más</a>
+			</div>
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_4 et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_3_5 et_pb_column_6    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_3 et_always_center_on_mobile">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://norwegianchile.cl/wp-content/uploads/ncl-res.jpg" alt="" /></span>
+			</div>
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_2_5 et_pb_column_7    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_divider_1 et_pb_space et_pb_divider_hidden"><div class="et_pb_divider_internal"></div></div><div class="et_pb_module et_pb_text et_pb_text_6 et_pb_bg_layout_light  et_pb_text_align_justified">
+				
+				
+				<div class="et_pb_text_inner">
+					<p style="text-align: center;">RESTAURANTS PARA TODOS LOS GUSTOS</p>
+<h1 style="text-align: center;">COMER A BORDO</h1>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_image et_pb_image_4 et_always_center_on_mobile">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://norwegianchile.cl/wp-content/uploads/ncl-wave-b.png" alt="" /></span>
+			</div><div class="et_pb_module et_pb_text et_pb_text_7 et_pb_bg_layout_light  et_pb_text_align_justified">
+				
+				
+				<div class="et_pb_text_inner">
+					<p>Experimente el placer de una comida de cuatro platos acompañada por una botella del mejor vino.<br /> O si prefiere elija una hamburguesa directo de la parrilla. Gracias a que no hay horarios fijos de comida ni asientos preasignados, puede probar todas las opciones gastronómicas a bordo sin restricciones.</p>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_button_module_wrapper et_pb_button_3_wrapper et_pb_button_alignment_center et_pb_module ">
+				<a class="et_pb_button et_pb_button_3 et_pb_bg_layout_light" href="https://reservas.norwegianchile.cl/">Ver más</a>
+			</div>
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div id="abordo" class="et_pb_row et_pb_row_5 et_pb_gutters1 et_pb_row_fullwidth">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_8    et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_8 et_pb_bg_layout_light  et_pb_text_align_justified">
+				
+				
+				<div class="et_pb_text_inner">
+					<p style="text-align: center;">SÓLO EN NORWEGIAN</p>
+<h2 style="text-align: center;">NUESTROS FAVORITOS</h2>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_image et_pb_image_5 et_always_center_on_mobile">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://norwegianchile.cl/wp-content/uploads/ncl-wave-b.png" alt="" /></span>
+			</div>
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_6 et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_1_3 et_pb_column_9    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_9 et_hover_enabled et_clickable et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>Deporte y<br /> Aventura</h3>
+<p><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 aligncenter size-full" /></p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3 et_pb_column_10    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_10 et_hover_enabled et_clickable et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>Diversión y<br /> Fiestas</h3>
+<p><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 aligncenter size-full" /></p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3 et_pb_column_11    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_11 et_hover_enabled et_clickable et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>Pista de autos<br /> a bordo</h3>
+<p><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 aligncenter size-full" /></p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_7 et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_1_3 et_pb_column_12    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_with_border et_pb_module et_pb_text et_pb_text_12 et_clickable et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>Deporte y<br /> Aventura</h3>
+<p><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 aligncenter size-full" /></p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3 et_pb_column_13    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_with_border et_pb_module et_pb_text et_pb_text_13 et_clickable et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>Diversión y<br /> Fiestas</h3>
+<p><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 aligncenter size-full" /></p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3 et_pb_column_14    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_14 et_clickable et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>Pista de autos<br /> a bordo</h3>
+<p><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 aligncenter size-full" /></p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_8 et_pb_equal_columns et_pb_gutters2">
+				<div class="et_pb_column et_pb_column_2_3 et_pb_column_15    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_6 et_always_center_on_mobile">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://norwegianchile.cl/wp-content/uploads/Home-NORWEGIAN-entretencion.jpg" alt="" /></span>
+			</div>
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3 et_pb_column_16    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_divider_2 et_pb_space et_pb_divider_hidden"><div class="et_pb_divider_internal"></div></div><div class="et_pb_module et_pb_text et_pb_text_15 et_pb_bg_layout_dark  et_pb_text_align_justified">
+				
+				
+				<div class="et_pb_text_inner">
+					<h1 style="text-align: center;">ENTRETENCIÓN</h1>
+<p><img src="https://norwegianchile.cl/wp-content/uploads/ncl-wave-w.png" width="63" height="15" alt="" class="wp-image-61 alignnone size-full" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_text et_pb_text_16 et_pb_bg_layout_dark  et_pb_text_align_justified">
+				
+				
+				<div class="et_pb_text_inner">
+					<p>Déjese cautivar por el brillo de Broadway con espectáculos como Rock of Ages o el musical ganador del premio Tony Award®, Million Dollar Quartet. O contemple a los acróbatas y trapecistas en Cirque Dreams. Descubra cada día nuestras galardonadas opciones de entretenimiento, superiores a cualquier otra en alta mar.</p>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_button_module_wrapper et_pb_button_4_wrapper et_pb_button_alignment_center et_pb_module ">
+				<a class="et_pb_button et_pb_button_4 et_hover_enabled et_pb_bg_layout_light" href="https://reservas.norwegianchile.cl/">Ver más</a>
+			</div>
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div id="barcos" class="et_pb_row et_pb_row_9 et_pb_gutters1 et_pb_row_fullwidth">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_17    et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_17 et_pb_bg_layout_light  et_pb_text_align_justified">
+				
+				
+				<div class="et_pb_text_inner">
+					<h2 style="text-align: center;">BARCOS</h2>
+<h2 style="text-align: center;">CONTEMPORÁNEOS</h2>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_image et_pb_image_7 et_always_center_on_mobile">
+				
+				
+				<span class="et_pb_image_wrap "><img src="https://norwegianchile.cl/wp-content/uploads/ncl-wave-b.png" alt="" /></span>
+			</div>
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_10 et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_1_3 et_pb_column_18    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_18 et_hover_enabled et_clickable et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>The Haven</h3>
+<h3><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 alignnone size-full" style="display: block; margin-left: auto; margin-right: auto;" /></h3>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_text et_pb_text_19 et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<p>Su propio refugio de lujo arriba del barco, The Haven by Norwegian combina elegancia contemporánea, servicio personalizado y privacidad para que disfrute un viaje increíble.</p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3 et_pb_column_19    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_20 et_hover_enabled et_clickable et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>Las Suites más<br /> grandes del mar</h3>
+<p><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 aligncenter size-full" /></p>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_text et_pb_text_21 et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<p>Amplias y espaciosas, nuestras suites son perfectas para parejas o grupos de hasta ocho huéspedes. Un lugar magnífico con amplios balcones, salas de estar y espléndidos baños.</p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3 et_pb_column_20    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_22 et_hover_enabled et_clickable et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>Studios para los que<br /> viajan solos</h3>
+<p><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 aligncenter size-full" /></p>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_text et_pb_text_23 et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<p>Disfrute de su tiempo con estilo en nuestros galardonados Studios, diseñados y ambientados para quienes viajan sin acompañante.</p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_11 et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_21    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_24 et_clickable et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>The Haven</h3>
+<h3><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 alignnone size-full" style="display: block; margin-left: auto; margin-right: auto;" /></h3>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_2 et_pb_column_22    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_25 et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<p>Su propio refugio de lujo arriba del barco, The Haven by Norwegian combina elegancia contemporánea, servicio personalizado y privacidad para que disfrute un viaje increíble.</p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_12 et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_23    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_26 et_clickable et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>Las Suites más<br /> grandes del mar</h3>
+<h3><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 alignnone size-full" style="display: block; margin-left: auto; margin-right: auto;" /></h3>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_2 et_pb_column_24    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_27 et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<p>Amplias y espaciosas, nuestras suites son perfectas para parejas o grupos de hasta ocho huéspedes. Un lugar magnífico con amplios balcones, salas de estar y espléndidos baños.</p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_13 et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_25    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_28 et_clickable et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<h3>Studios para los que<br />viajan solos</h3>
+<h3><img src="https://norwegianchile.cl/wp-content/uploads/norwegian-bar.jpg" width="85" height="4" alt="" class="wp-image-229 alignnone size-full" style="display: block; margin-left: auto; margin-right: auto;" /></h3>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_2 et_pb_column_26    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_29 et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<p>Disfrute de su tiempo con estilo en nuestros galardonados Studios, diseñados y ambientados para quienes viajan sin acompañante.</p>
+				</div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_14">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_27    et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_button_module_wrapper et_pb_button_5_wrapper et_pb_button_alignment_center et_pb_module ">
+				<a class="et_pb_button et_pb_button_5 et_pb_bg_layout_light" href="https://reservas.norwegianchile.cl/">Ver Más</a>
+			</div>
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			</div> <!-- .et_pb_section -->			</div>
+			
+		</div>					</div> <!-- .entry-content -->
+
+				
+				</article> <!-- .et_pb_post -->
+
+			
+
+</div> <!-- #main-content -->
+-->
+	
+		<!--BUSCADOR -->
+
+		<div class="mt-5">
+			<div class="col-12">
+			    <div class="card-custom bg-light">
+			      	<div class="card-body">
+				        <h5 class="card-title">Explorar 999 Cruceros</h5>
+				        	<div class="row" >
+				       			<div class="row col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 " >
+						       		<div class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " ><!--div de los 3 primeros botones -->
+						       			<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-2 mt-sm-2 mt-md-2" >
+						       				<div class="tail-select2" tabindex="0" >
+						                    	<div id="select1" data-open="1" class="select-label2 tail-select-container2">
+						                    		<span class="label-count2 ">
+						                    			<i class="fas fa-map-marker-alt"></i>
+						                    		</span>
+						                    		<span class="label-inner2">Destino</span>
+						                    	</div>
+						                    	<div class="select-dropdown2">
+						                    		<div class="dropdown-search2 ">
+						                    			<input type="text" class="search-input2" placeholder="Buscar...">
+						                    		</div>
+						                    		<div class="dropdown-inner2 ">
+						                    			<ul class="dropdown-optgroup2">
+						                    				<!--Empieza la basura    -->
+						                    				<li class="dropdown-option2">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox1">
+																	<label for="checkbox1">Cruceros a África</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option2">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox2">
+																	<label for="checkbox2">Cruceros por Alaska</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option2">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox3">
+																	<label for="checkbox3">Cruceros por Asia</label>
+																</div>		         
+						                    				</li>
+						                    			</ul>
+						                    			<ul class="dropdown-optgroup2">
+						                    				<li class="dropdown-option2">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox4">
+																	<label for="checkbox4">Cruceros por el Mediterráneo</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option2">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox5">
+																	<label for="checkbox5">Cruceros por la Riviera Mexicana</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option2">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox6">
+																	<label for="checkbox6">Cruceros en el norte de Europa</label>
+																</div>		         
+						                    				</li>
+						                    			</ul>
+						                    		</div>
+						                    	</div>
+					                    	</div>
+						       			</div>
+						       			<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-2 mt-sm-2 mt-md-2" >
+							       			<div class="tail-select2 no-classes multiple" tabindex="0" >
+						                    	<div id="select2" data-open="1" class="select-label2 tail-select-container2">
+						                    		<span class="label-count2">
+						                    			<i class="fas fa-ship"></i>
+						                    		</span>
+						                    		<span class="label-inner2">Puerto de salida</span>
+						                    	</div>
+						                    	<div class="select-dropdown2" >
+						                    		<div class="dropdown-search2">
+						                    			<input type="text" class="search-input2" placeholder="Buscar...">
+						                    		</div>
+						                    		<div class="dropdown-inner2">
+						                    			<ul class="dropdown-optgroup">
+						                    				<li class="dropdown-option2">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox7">
+																	<label for="checkbox7">Ámsterdam, Países Bajos</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option2">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox8">
+																	<label for="checkbox8">Miami, Florida</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option2">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox9">
+																	<label for="checkbox9">Roma (Civitavecchia), Italia</label>
+																</div>		         
+						                    				</li>
+						                    			</ul>
+						                    			<ul class="dropdown-optgroup">
+						                    				<li class="dropdown-option2">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox10">
+																	<label for="checkbox10">Orlando y sus playas (Puerto Cañaveral)</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option2">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox11">
+																	<label for="checkbox11">Vancouver, Columbia Británica</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option2">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox12">
+																	<label for="checkbox12">Atenas (El Pireo), Grecia</label>
+																</div>		         
+						                    				</li>
+						                    			</ul>
+						                    		</div>
+						                    	</div>
+						                    </div>
+						       			</div>
+						       			<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 mt-2 mt-sm-2 mt-md-2" >
+							       			<div class="tail-select2 no-classes multiple" tabindex="0" >
+						                    	<div id="select3" data-open="1" class="select-label2 tail-select-container2">
+						                    		<span class="label-count2">
+						                    			<i class="far fa-calendar-plus"></i>
+						                    		</span>
+						                    		<span class="label-inner2">Fechas</span>
+						                    	</div>
+						                    	<div class="select-dropdown2" >
+						                    		<div class="dropdown-inner2">
+						                    			<ul class="dropdown-optgroup calendario" >
+						                    				<h5>2020</h5>
+
+						                    			</ul>
+						                    			<ul class="dropdown-optgroup" >
+						                    				<h5>2021</h5>
+						                    			</ul>
+						                    		</div>
+						                    	</div>
+						                    </div>
+						       			</div>
+						       		</div><!--Cierre fila con 3 botones-->
+						       		<div class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " >
+						       			<div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2 mt-2 mt-sm-2 mt-md-2"  >
+										    <div  id="select4" class="tail-select3 no-classes multiple " tabindex="0" >
+						                    	<div class="select-label3 tail-select-container3">
+						                    		<span class="label-count3">0</span>
+						                    		<span class="label-inner3">Duracion</span>
+						                    	</div>
+						                    	<div class="select-dropdown3 hidden" >
+						                    		<div class="dropdown-inner3">
+						                    			<ul class="dropdown-optgroup3" >
+						                    				<li class="dropdown-option3">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox13">
+																	<label for="checkbox13">1-4 Dias</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option3">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox14">
+																	<label for="checkbox14">5-8 Dias</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option3">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox15">
+																	<label for="checkbox15">9-14 Dias</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option3">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox16">
+																	<label for="checkbox16">+15 Dias</label>
+																</div>		         
+						                    				</li>
+						                    			</ul>
+						                    		</div>
+						                    	</div>
+						                    </div>
+						       			</div>
+						       			<div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2 mt-2 mt-sm-2 mt-md-2" >
+										    <div class="tail-select no-classes multiple" tabindex="0" id="select5">
+						                    	<div class="select-label tail-select-container">
+						                    		<span class="label-count">0</span>
+						                    		<span class="label-inner">Crucero</span>
+						                    	</div>
+						                    	<div class="select-dropdown" >
+						                    		
+						                    		<div class="dropdown-inner">
+						                    			
+						                    			<ul class="dropdown-optgroup" data-group="#">
+						                    				<li class="dropdown-option">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox17">
+																	<label for="checkbox17">Ámsterdam, Países Bajos</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox18">
+																	<label for="checkbox18">Miami, Florida</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox19">
+																	<label for="checkbox19">Roma (Civitavecchia), Italia</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox20">
+																	<label for="checkbox20">Orlando y sus playas (Puerto Cañaveral)</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox21">
+																	<label for="checkbox21">Vancouver, Columbia Británica</label>
+																</div>		         
+						                    				</li>
+						                    				<li class="dropdown-option">
+						                    					<div class="checkbox">
+						                    						<input type="checkbox" name="checkbox" id="checkbox22">
+																	<label for="checkbox22">Atenas (El Pireo), Grecia</label>
+																</div>		         
+						                    				</li>
+						                    			</ul>
+						                    		</div>
+						                    	</div>
+						                    </div>
+						       			</div>
+						       		</div><!--cierre de fila con 2 dropdown -->
+					       		</div><!--Cierre de 5 dropdowns -->
+
+					       		<div class="row col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 " >
+					       			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+					       				<div class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2 mt-sm-2 mt-md-2 " >
+						       				<button type="button" class="btn btn-custom col-12 ">BUSCAR CRUCERO</button>
+						       			</div>	
+					       			</div>	
+					       		</div><!--Cierre de contenedor boton buscar -->
+				       		</div>
+			        </div>
+			    </div>
+	  		</div>	
+		</div> 
+    <div mt-5>
+      
+    </div>
+
+
+
+
+
+
+
+
+
+	<span class="et_pb_scroll_top et-pb-icon"></span>
+
+
+			<footer id="main-footer">
+				
+<div class="container">
+    <div id="footer-widgets" class="clearfix">
+		<div class="footer-widget"><div id="text-2" class="fwidget et_pb_widget widget_text"><h4 class="title">Contacto</h4>			<div class="textwidget"><p><a href="tel:+56223352823">+562 2335 2823</a></p>
+<p><a href="mailto:reservas@norwegianchile.cl">reservas@norwegianchile.cl</a></p>
+<p>Horarios de atención:</p>
+<p>Lun a Vie: 9:00 a 18:00 hrs.</p>
+<p><a href="https://www.facebook.com/norwegianchile/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a> <a href="https://www.instagram.com/norwegianchile/" target="_blank" style="margin-left: 10px; font-size: 18px;" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></p>
+</div>
+		</div> <!-- end .fwidget --></div> <!-- end .footer-widget --><div class="footer-widget"><div id="text-3" class="fwidget et_pb_widget widget_text"><h4 class="title">Dirección</h4>			<div class="textwidget"><p>Francisco Noguera 200,</p>
+<p>Oficina 303, esquina Andrés Bello</p>
+<p>(Metro Pedro de Valdivia).</p>
+<p>Providencia, Santiago de Chile.</p>
+</div>
+		</div> <!-- end .fwidget --></div> <!-- end .footer-widget --><div class="footer-widget"><div id="media_image-2" class="fwidget et_pb_widget widget_media_image"><img width="900" height="238" src="https://norwegianchile.cl/wp-content/uploads/Logo-nor-blanco.png" class="image wp-image-146  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" srcset="https://norwegianchile.cl/wp-content/uploads/Logo-nor-blanco.png 900w, https://norwegianchile.cl/wp-content/uploads/Logo-nor-blanco-300x79.png 300w, https://norwegianchile.cl/wp-content/uploads/Logo-nor-blanco-768x203.png 768w" sizes="(max-width: 900px) 100vw, 900px" /></div> <!-- end .fwidget --></div> <!-- end .footer-widget -->    </div> <!-- #footer-widgets -->
+</div>    <!-- .container -->
+-->
+		
+				<div id="footer-bottom">
+					<div class="container clearfix">
+				<div id="footer-info">© 2019 TODOS LOS DERECHOS RESERVADOS GSA MARKETLINE LTDA. | <a href="#">Términos y condiciones</a></div>					</div>	<!-- .container -->
+				</div>
+			</footer> <!-- #main-footer -->
+		</div> <!-- #et-main-area -->
+
+
+	</div> <!-- #page-container -->
+
+	<div id="wonderpluginlightbox_options" data-skinsfoldername="skins/default/"  data-jsfolder="https://norwegianchile.cl/wp-content/plugins/wonderplugin-lightbox/engine/" data-autoslide="false" data-slideinterval="5000" data-showtimer="true" data-timerposition="bottom" data-timerheight="2" data-timercolor="#dc572e" data-timeropacity="1" data-showplaybutton="true" data-alwaysshownavarrows="false" data-bordersize="8" data-showtitleprefix="true" data-responsive="true" data-fullscreenmode="false" data-fullscreentextoutside="true" data-closeonoverlay="true" data-videohidecontrols="false" data-titlestyle="bottom" data-imagepercentage="75" data-enabletouchswipe="true" data-autoplay="true" data-html5player="true" data-overlaybgcolor="#000" data-overlayopacity="0.8" data-defaultvideovolume="1" data-bgcolor="#FFF" data-borderradius="0" data-thumbwidth="96" data-thumbheight="72" data-thumbtopmargin="12" data-thumbbottommargin="12" data-barheight="64" data-showtitle="true" data-titleprefix="%NUM / %TOTAL" data-titlebottomcss="color:#333; font-size:14px; font-family:Armata,sans-serif,Arial; overflow:hidden; text-align:left;" data-showdescription="true" data-descriptionbottomcss="color:#333; font-size:12px; font-family:Arial,Helvetica,sans-serif; overflow:hidden; text-align:left; margin:4px 0px 0px; padding: 0px;" data-titleinsidecss="color:#fff; font-size:16px; font-family:Arial,Helvetica,sans-serif; overflow:hidden; text-align:left;" data-descriptioninsidecss="color:#fff; font-size:12px; font-family:Arial,Helvetica,sans-serif; overflow:hidden; text-align:left; margin:4px 0px 0px; padding: 0px;" data-videobgcolor="#000" data-html5videoposter="" data-responsivebarheight="false" data-smallscreenheight="415" data-barheightonsmallheight="64" data-notkeepratioonsmallheight="false" data-showsocial="false" data-socialposition="position:absolute;top:100%;right:0;" data-socialpositionsmallscreen="position:absolute;top:100%;right:0;left:0;" data-socialdirection="horizontal" data-socialbuttonsize="32" data-socialbuttonfontsize="18" data-socialrotateeffect="true" data-showfacebook="true" data-showtwitter="true" data-showpinterest="true" data-bordertopmargin="48" data-shownavigation="true" data-navbgcolor="rgba(0,0,0,0.2)" data-shownavcontrol="true" data-hidenavdefault="false" style="display:none;"></div><div class="wonderplugin-engine"><a href="http://www.wonderplugin.com/wordpress-lightbox/" title="WordPress Image Lightbox Plugin">WordPress Image Lightbox Plugin</a></div>	<script type="text/javascript">
+				var et_link_options_data = [{"class":"et_pb_divider_0","url":"https:\/\/norwegianchile.cl\/tranquilidad-norwegian-2\/","target":"_self"},{"class":"et_pb_text_3","url":"https:\/\/reservas.norwegianchile.cl\/usd\/sailings?destination=Hawaii","target":"_self"},{"class":"et_pb_text_4","url":"https:\/\/reservas.norwegianchile.cl\/","target":"_self"},{"class":"et_pb_text_5","url":"https:\/\/reservas.norwegianchile.cl\/usd\/sailings?destination=Greek%20Isles%20%26%20Italy","target":"_self"},{"class":"et_pb_text_9","url":"#","target":"_self"},{"class":"et_pb_text_10","url":"#","target":"_self"},{"class":"et_pb_text_11","url":"#","target":"_self"},{"class":"et_pb_text_12","url":"#","target":"_self"},{"class":"et_pb_text_13","url":"#","target":"_self"},{"class":"et_pb_text_14","url":"#","target":"_self"},{"class":"et_pb_text_18","url":"#","target":"_self"},{"class":"et_pb_text_20","url":"#","target":"_self"},{"class":"et_pb_text_22","url":"#","target":"_self"},{"class":"et_pb_text_24","url":"#","target":"_self"},{"class":"et_pb_text_26","url":"#","target":"_self"},{"class":"et_pb_text_28","url":"#","target":"_self"}];
+			</script>
+				<script type="text/javascript">
+				function revslider_showDoubleJqueryError(sliderID) {
+					var errorMessage = "Revolution Slider Error: You have some jquery.js library include that comes after the revolution files js include.";
+					errorMessage += "<br> This includes make eliminates the revolution slider libraries, and make it not work.";
+					errorMessage += "<br><br> To fix it you can:<br>&nbsp;&nbsp;&nbsp; 1. In the Slider Settings -> Troubleshooting set option:  <strong><b>Put JS Includes To Body</b></strong> option to true.";
+					errorMessage += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jquery.js include and remove it.";
+					errorMessage = "<span style='font-size:16px;color:#BC0C06;'>" + errorMessage + "</span>";
+						jQuery(sliderID).show().html(errorMessage);
+				}
+			</script>
+			<script type='text/javascript'>
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_shortcodes_strings = {"previous":"Anterior","next":"Siguiente"};
+var et_pb_custom = {"ajaxurl":"https:\/\/norwegianchile.cl\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/norwegianchile.cl\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/norwegianchile.cl\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"db39d37695","subscription_failed":"Por favor, revise los campos a continuaci\u00f3n para asegurarse de que la informaci\u00f3n introducida es correcta.","et_ab_log_nonce":"ae3201a19d","fill_message":"Por favor, rellene los siguientes campos:","contact_error_message":"Por favor, arregle los siguientes errores:","invalid":"De correo electr\u00f3nico no v\u00e1lida","captcha":"Captcha","prev":"Anterior","previous":"Anterior","next":"Siguiente","wrong_captcha":"Ha introducido un n\u00famero equivocado de captcha.","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","is_ab_testing_active":"","page_id":"27","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"no","is_shortcode_tracking":"","tinymce_uri":""};
+var et_pb_box_shadow_elements = [];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://norwegianchile.cl/wp-content/themes/Divi/js/custom.min.js?ver=3.20.2'></script>
+<script type='text/javascript' src='https://norwegianchile.cl/wp-content/themes/Divi/core/admin/js/common.js?ver=3.20.2'></script>
+<script type='text/javascript' src='https://norwegianchile.cl/wp-includes/js/wp-embed.min.js?ver=5.3.2'></script>
+</body>
+</html>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+
+Served from: norwegianchile.cl @ 2020-04-10 01:33:11 by W3 Total Cache
+-->

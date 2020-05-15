@@ -459,4 +459,34 @@ ul li.dropdown-option3{
     background-color:rgba(238, 242, 246, 0.5)
 }
 
+.select-dropdown-custom{
+    
+}
 
+
+.tail-select3 .select-dropdown-custom{
+   top: 100%;
+    left: 0;
+    color: #303438;
+    /* Cambio de tamaño al hacer click  */
+        /* Cambio de tamaño al hacer click  */
+    
+    margin: -1px 0 0 0;
+    padding: 0;
+    z-index: 30; 
+    position: absolute;
+    background-color: white;
+    border-width: 0px;
+    border-style: solid;
+    border-color: #d9d9d9;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.25);
+    animation-name: selector;
+    animation-duration: 5ms;  
+
+    width: 100%;
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}

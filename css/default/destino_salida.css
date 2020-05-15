@@ -305,7 +305,6 @@
     width: 100%;
     margin: 0;
     padding: 1px 0;
-   /* display: block;*/
     overflow-x: hidden;
     overflow-y: auto;
     column-count: 2;
@@ -570,70 +569,112 @@ input[type=checkbox] {
 
 
 
-/*CHECKBOX*/
 
-  
-   .checkbox label {
-    display: inline-block;
-    cursor: pointer;
-    color: #425E66;
+
+
+/* contenido personalizado de los dropdown  */
+
+
+
+.tail-select2 .select-dropdown-custom{
+   top: 100%;
+    left: 0;
+    color: #303438;    
+    margin: -1px 0 0 0;
+    padding: 0;
+    z-index: 30; 
+    position: absolute;
+    background-color: white;
+    border-width: 0px;
+    border-style: solid;
+    border-color: #d9d9d9;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.25);
+    animation-duration: 5ms;  
+    width: 100%;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+
+
+.select-dropdown-custom .dropdown-search-custom {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     position: relative;
-    padding: 5px 15px 5px 25px;
-    font-size: 1em;
-    border-radius: 5px;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    font-family: inherit;
-    font-weight: bold;
-    }
-    
-    .checkbox label:hover {
-      background: #F6F8FA; 
-    }
-    
-    .checkbox label:before {
-      content: "";
-      display: inline-block;
-      width: 17px;
-      height: 17px;
-      position: absolute;
-      left: 0px;
-      border-radius: 0%;
-      background: none;
-      border: 3px solid #425E66; 
-    }
- /*   
-    .checkbox .calendario label:before {
-      content: "";
-      display: inline-block;
-      width: 0px;
-      height: 0px;
-      position: absolute;
-      left: 10px;
-      border-radius: 0%;
-      background: none;
-      border: 3px solid #425E66; 
-    }
-*/
-
-    .checkbox label:before {
-        border-radius: 3px; 
-    }
-
-    .checkbox input[type="checkbox"] {
-        display: none; 
-    }
-
-    .checkbox input[type="checkbox"]:checked + label:before {
-      display: none; 
-    }
-
-    .checkbox input[type="checkbox"]:checked + label {
-      background: #d3dce6;
-      color: #425E66;
-      padding: 5px 15px; }
-
-      /*CHECKBOX*/
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #d9d9d9;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
 
 
+.select-dropdown-custom .dropdown-inner-custom{
+    width: 100%;
+    margin: 0;
+    padding: 1px 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    column-count: 2;
+    column-gap: 0;
+}
+.footer-dropdown-custom{
+    height: 56px;
+    background-color: rgb(250, 250, 250);
+    border-top-color:  rgb(232, 232, 232);
+ }
+
+
+
+
+.select-dropdown-custom .dropdown-inner-custom  li.option-custom{
+    width: 100%;
+    list-style: none;
+    padding-left: 10px;
+    padding-right: 28px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    color:#0071A6;
+    line-height: 20px;
+    font-size: 14px;
+    min-height: 18px;
+    font-weight:200px;
+    display: flex; /*para que el contenido de texto empiese hasta terminar la linea*/
+    box-sizing: border-box; /*toma el ancho sea el ancho total*/
+}
+
+.select-dropdown-custom .dropdown-inner-custom  li.option-custom label.label-option-custom{
+    width: 90%;
+    cursor: pointer;
+    color:#0071A6;
+    padding: 5px 0px 0px 20px;
+}
+
+.select-dropdown-custom .dropdown-inner-custom  li.option-custom label.label-option-custom:hover {
+      color: #425E66; 
+}
+
+div .contenedor-check-custom{
+    padding: 5px 0px 0px 0px;
+}
+.select-dropdown-custom .dropdown-inner-custom  li.option-custom div.contenedor-check-custom{
+    width: 10%;
+}
+
+
+.select-dropdown-custom .dropdown-inner-custom  li.option-custom input.input-custom[type="checkbox"]{
+    width: 100%;    
+    background: none;
+    border-style: solid; 
+    border-width: 1px;        
+    border-radius: 2px;  
+    border-color: #0071A6;      
+}  
+
+
+
+ 

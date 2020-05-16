@@ -10,17 +10,20 @@
 
 .dropdown-option2 > span{
     width: 80%;
+    border-color: red;
+    border-width: 1px;
+    border-style: solid;
 }
 
 /*Propiedades de los componentes de las opciones  */
 
 
 input[type=checkbox] {
-        position: relative;
-        cursor: pointer;
-        background: #3d404e;
-        height: 20px;
-    }
+    position: relative;
+    cursor: pointer;
+    background: #3d404e;
+    height: 20px;
+}
     
    
 /* Iconos font awesome*/ 
@@ -90,6 +93,7 @@ input[type=checkbox] {
 }
 
 /* contenido personalizado de los dropdown  */
+/*PRIMER DROPDOWN (2 FILAS )*/
 
 .tail-select-custom{
     width: 100%;
@@ -99,14 +103,22 @@ input[type=checkbox] {
     font-family: inherit;
     font-weight: bold;
     border-style: bold;
-    /*display:none;*/ 
     border-style: solid;
     border-color: #d9d9d9;
-    border-width: 1px;
-      
+    border-width: 1px;  
+}
+
+/*SEGUNDO DROPDOWN (TIENE UNA FILA)*/
+
+.dropdown-inner-custom-unico {
+    width: 100%;
+    margin: 0;
+    padding: 1px 0;
 }
 
 
+
+/*PROPIEDADES DEL INPUT DE TEXTO DEL PRIMER DROPDOWN     */
 
 .tail-select-custom input[type="text"]{
     color: #425E66;
@@ -156,8 +168,6 @@ input[type=checkbox] {
     border-color: #d9d9d9;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-
-
 }
 
 
@@ -169,6 +179,8 @@ input[type=checkbox] {
     column-gap: 0;
 
 }
+
+
  div.footer-dropdown-custom{
     height: 56px;
     background-color: rgb(250, 250, 250) ;
@@ -182,8 +194,7 @@ input[type=checkbox] {
     position: relative;
     border-style: solid;
     border-color: #d9d9d9;
-    border-width: 1px;
-   
+    border-width: 1px;s
  }
 
  div.cruise-count{
@@ -193,8 +204,8 @@ input[type=checkbox] {
 }
 
 .footer-option-custom{
-    padding-left: 8px;
-    padding-right:8px;
+    padding-left: 0%;
+    padding-right:0px;
     color: #0071A6;
     text-align: right;
 }
@@ -221,28 +232,92 @@ input[type=checkbox] {
     font-weight:200px;
     display: flex; /*para que el contenido de texto empiese hasta terminar la linea*/
     box-sizing: border-box; /*toma el ancho sea el ancho total*/
+}
+
+.select-dropdown-custom .dropdown-inner-custom-unico  li.option-custom{
+    width: 100%;
+    list-style: none;
+    padding-left: 0px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:#0071A6;
+    line-height: 20px;
+    font-size: 14px;
+    min-height: 18px;
+    font-weight:200px;
+    display: flex; /*para que el contenido de texto empiese hasta terminar la linea*/
+    box-sizing: border-box; /*toma el ancho sea el ancho total*/
+}
+
+.select-dropdown-custom .dropdown-inner-custom-unico  li.option-custom-buttons{
+    width: 100%;
+    list-style: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:#0071A6;
+    line-height: 20px;
+    font-size: 14px;
+    min-height: 18px;
+    font-weight:200px;
+    display: flex; /*para que el contenido de texto empiese hasta terminar la linea*/
+    box-sizing: border-box; /*toma el ancho sea el ancho total*/
 
 }
 
-.select-dropdown-custom .dropdown-inner-custom  li.option-custom label.label-option-custom{
-    width: 90%;
+div.content-custom-buttons{
+    border-color: #0071A6;
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+
+}
+
+
+
+
+.select-dropdown-custom .dropdown-inner-custom  li.option-custom label.label-option-custom,
+.select-dropdown-custom .dropdown-inner-custom-unico li.option-custom label.label-option-custom{
+    width: 100%;
     cursor: pointer;
     color:#0071A6;
     padding: 5px 0px 0px 20px;
+    text-align: left;
 
 }
 
-.select-dropdown-custom .dropdown-inner-custom  li.option-custom label.label-option-custom:hover {
-      color: #425E66; 
+.select-dropdown-custom .dropdown-inner-custom-unico li.option-custom-buttons label.label-option-custom-buttons{
+    width: 100%;
+    cursor: pointer;
+    color:#0071A6;
+    padding: 5px 0px 0px 0px;
+    text-align: center;
 }
 
-div .contenedor-check-custom{
+
+
+
+
+.select-dropdown-custom .dropdown-inner-custom  li.option-custom label.label-option-custom:hover, 
+.select-dropdown-custom .dropdown-inner-custom-unico  li.option-custom label.label-option-custom:hover{
+      color: #0D2236; 
+}
+
+div.contenedor-check-custom, div.contenedor-check-custom{
     padding: 5px 0px 0px 0px;
 
 }
-.select-dropdown-custom .dropdown-inner-custom  li.option-custom div.contenedor-check-custom{
-    width: 10%;
 
+ div.contenedor-check-custom-unico{
+    padding: 0px 5px 0px 0px;
+
+}
+
+.select-dropdown-custom .dropdown-inner-custom  li.option-custom div.contenedor-check-custom,
+.select-dropdown-custom .dropdown-inner-custom-unico  li.option-custom div.contenedor-check-custom{
+    width: 10%;
 }
 
 
@@ -255,15 +330,21 @@ div .contenedor-check-custom{
     border-color: #0071A6;    
 
 }  
+
+
+
 /*Para hacer hidden el contenido del dropdown*/
 .all-dropdown{
-    display: none;
+    display: ;
 }
 
 
- .tail-select-custom .select-label-custom{
+
+/*PARTE DE AFUERA DEL DROPDOWN*/
+
+.tail-select-custom .select-label-custom{
     cursor: pointer;
-    color: #425E66;
+    color: #0071A6;
     width: 100%;
     margin: 0;
     padding: 5px 30px 5px 10px;
@@ -274,9 +355,14 @@ div .contenedor-check-custom{
     border-width: 0px;
     border-style: solid;
     border-radius: 0px;
+}
+
+.tail-select-custom .select-label-custom:hover{
+    color:#0D2236;
+}
     
 
-}
+
 
 
 /*Flecha del input principal*/
@@ -304,24 +390,78 @@ div .contenedor-check-custom{
     width: auto;
     margin: 0;
     text-align: left;
-    /*vertical-align: top;*/
 }
+
 /*Icono*/
 .tail-select-custom .select-label-custom .label-count-custom{
     float: left;
-    color: rgba(48, 52, 56, 0.85);
+    color: #0071A6; 
     margin: 0 5px 0 0;
     padding: 0 7px 0 0;
     font-size: 11.844px;
     font-weight: bold;
     text-shadow: none;
     white-space: nowrap;
-   /* vertical-align: top;*/
     border-width: 0px 1px 0 0;
     border-style: solid;
     border-color: #d9d9d9;
     border-radius: 0px; 
     width: 30px;
-
 }
+
+/*PARTE DE AFUERA DEL DROPDOWN*/
+
+
+
+
+
+/*SEGUNDO BOTON*/
+
+
+.dropdown-inner-custom-unico {
+    width: 100%;
+    margin: 0;
+    padding: 1px 0;
+}
+
+
+
+/*CHECKBOX DE INPUT DIAS */
+
+div.checkbox-custom-buttons{
+    width: 100%;
+}
+
+  
+.checkbox-custom-buttons label {
+    display: inline-block;
+    cursor: pointer;
+    color: #0071A6;
+    position: relative;
+    font-size: 1em;
+    border-color: #0071A6;
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+  
+.checkbox-custom-buttons label:hover {
+    color: #0D2236;
+}
+     
+.checkbox-custom-buttons input[type="checkbox"] {
+        display: none; 
+}
+    .checkbox-custom-buttons input[type="checkbox"]:checked + label {
+    background: #0071A6;
+    color: #fff;
+}
+
+
+
+
+
 

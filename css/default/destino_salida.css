@@ -1,165 +1,4 @@
 @charset "UTF-8";
-/*
- |  tail.select - The vanilla solution to make your HTML select fields AWESOME!
- |  @file       ./css/default/tail.select-light-feather.css
- |  @author     SamBrishes <sam@pytes.net>
- |  @version    0.5.16 - Beta
- |
- |  @website    https://github.com/pytesNET/tail.select
- |  @license    X11 / MIT License
- |  @copyright  Copyright © 2014 - 2019 SamBrishes, pytesNET <info@pytes.net>
- */
-
-/* @start GENERAL */
-
-.tail-select2{
-    width: 100%;
-    margin: 1px;
-    position: relative;
-    font-size: 14px;
-    line-height: 40px;
-    font-family: inherit;
-    font-weight: bold;
-}
-
-
-
-.tail-select2 input[type="text"]{
-    color: #425E66;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 10px 15px;
-    outline: 0;
-    font-size: 12px;
-    line-height: 20px;
-    vertical-align: middle;
-    background-color: transparent;
-    border-width: 0;
-    border-style: solid;
-    border-color: transparent;
-    border-radius: 0;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-
-}
-
-
-/* @end GENERAL */
-
-/* @start LABEL */
-/*Input principal*/
-.tail-select2 .select-label2{
-    cursor: pointer;
-    color: #425E66;
-    width: 100%;
-    margin: 0;
-    padding: 5px 30px 5px 10px;
-    z-index: 27;
-    position: relative;
-    text-align: left;
-    background-color: #F6F8FA;
-    border-width: 0px;
-    border-style: solid;
-    border-radius: 0px;
-    
-
-}
-
-
-/*Flecha del input principal*/
-.tail-select2 .select-label2:after{
-    top: 15px;
-    right: 12px;
-    width: 0;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    z-index: 25;
-    content: "";
-    opacity: 0.5;
-    position: absolute;
-    border-top: 5px dashed;
-    border-top: 5px solid\9;
-    border-right: 5px solid transparent;
-    border-left: 5px solid transparent;
-    text-shadow: none;
-    transition: opacity 142ms linear, transform 142ms linear;
-    -webkit-transition: opacity 142ms linear, transform 142ms linear;
-}
-
-.tail-select2 .select-label2 .label-count2, .tail-select2 .select-label2 .label-inner2{
-    width: auto;
-    margin: 0;
-    text-align: left;
-    /*vertical-align: top;*/
-}
-/*Icono*/
-.tail-select2 .select-label2 .label-count2{
-    float: left;
-    color: rgba(48, 52, 56, 0.85);
-    margin: 0 5px 0 0;
-    padding: 0 7px 0 0;
-    font-size: 11.844px;
-    font-weight: bold;
-    text-shadow: none;
-    white-space: nowrap;
-   /* vertical-align: top;*/
-    border-width: 0px 1px 0 0;
-    border-style: solid;
-    border-color: #d9d9d9;
-    border-radius: 0px; 
-    width: 30px;
-
-}
-
-
-/*Dropdown principal*/
-.tail-select2 .select-dropdown2{
-    top: 100%;
-    left: 0;
-    color: #303438;
-    /* Cambio de tamaño al hacer click  */
-    width: 100%;
-    /* Cambio de tamaño al hacer click  */
-    min-height: 35px;
-    margin: -1px 0 0 0;
-    
-    padding: 0;
-    z-index: 30;
-    position: absolute;
-    background-color: white;
-    border-width: 0px;
-    border-style: solid;
-    border-color: #d9d9d9;
-    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.25);
-    -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.25);
-    animation-duration: 5ms;  
-    display:none;
-    max-height: 400px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-
-}
-
-
-
-.tail-select2 .select-dropdown2 .dropdown-search2{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    /*display: ;*/
-    position: relative;
-    border-width: 0 0 1px 0;
-    border-style: solid;
-    border-color: #d9d9d9;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-}
-
-
-
-
 
 
 /*Propiedades de los componentes de las opciones  */
@@ -215,10 +54,6 @@ input[type=checkbox] {
 }
 
 
-
-
-
-
 /*Items Custom*/
 
 .btn-custom {
@@ -254,19 +89,7 @@ input[type=checkbox] {
     
 }
 
-/*CLASE DE GRID BOOTSTRAP FALTA ARREGLAR EL GRID*/
-
-    
-/*CLASE DE GRID BOOTSTRAP FALTA ARREGLAR EL GRID*/
-
-
-
-
-
-
 /* contenido personalizado de los dropdown  */
-
-
 
 .tail-select-custom{
     width: 100%;
@@ -280,7 +103,7 @@ input[type=checkbox] {
     border-style: solid;
     border-color: #d9d9d9;
     border-width: 1px;
-    
+      
 }
 
 
@@ -304,10 +127,6 @@ input[type=checkbox] {
     border-left: none;
     border-right: none;
     border-top:none;
-
-     /*QUITAR*/
-    
-   
 }
 
 .tail-select-custom .select-dropdown-custom{
@@ -436,7 +255,73 @@ div .contenedor-check-custom{
     border-color: #0071A6;    
 
 }  
+/*Para hacer hidden el contenido del dropdown*/
+.all-dropdown{
+    display: none;
+}
 
 
+ .tail-select-custom .select-label-custom{
+    cursor: pointer;
+    color: #425E66;
+    width: 100%;
+    margin: 0;
+    padding: 5px 30px 5px 10px;
+    z-index: 27;
+    position: relative;
+    text-align: left;
+    background-color: #F6F8FA;
+    border-width: 0px;
+    border-style: solid;
+    border-radius: 0px;
+    
 
- 
+}
+
+
+/*Flecha del input principal*/
+.tail-select-custom .select-label-custom:after{
+    top: 15px;
+    right: 12px;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 25;
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    border-top: 5px dashed;
+    border-top: 5px solid\9;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    text-shadow: none;
+    transition: opacity 142ms linear, transform 142ms linear;
+    -webkit-transition: opacity 142ms linear, transform 142ms linear;
+}
+
+.tail-select-custom .select-label-custom .label-count-custom, .tail-select-custom .select-label-custom .label-inner-custom{
+    width: auto;
+    margin: 0;
+    text-align: left;
+    /*vertical-align: top;*/
+}
+/*Icono*/
+.tail-select-custom .select-label-custom .label-count-custom{
+    float: left;
+    color: rgba(48, 52, 56, 0.85);
+    margin: 0 5px 0 0;
+    padding: 0 7px 0 0;
+    font-size: 11.844px;
+    font-weight: bold;
+    text-shadow: none;
+    white-space: nowrap;
+   /* vertical-align: top;*/
+    border-width: 0px 1px 0 0;
+    border-style: solid;
+    border-color: #d9d9d9;
+    border-radius: 0px; 
+    width: 30px;
+
+}
+

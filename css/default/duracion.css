@@ -272,7 +272,7 @@
     border-color: #d9d9d9;
     box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.25);
-    animation-name: selector;
+    
     animation-duration: 5ms;  
     max-height: 400px;
     overflow-y: scroll;

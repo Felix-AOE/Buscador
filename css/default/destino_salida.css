@@ -70,6 +70,7 @@ input[type=checkbox] {
     font-size: 15px;
     font-weight: bold;
 }
+
 .btn-custom:hover{
     background-color: #E17913;
 }
@@ -215,39 +216,8 @@ input[type=checkbox] {
     cursor: pointer;
 }
 
-
-
-.select-dropdown-custom .dropdown-inner-custom  li.option-custom{
-    width: 100%;
-    list-style: none;
-    padding-left: 10px;
-    padding-right: 28px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: left;
-    color:#0071A6;
-    line-height: 20px;
-    font-size: 14px;
-    min-height: 18px;
-    font-weight:200px;
-    display: flex; /*para que el contenido de texto empiese hasta terminar la linea*/
-    box-sizing: border-box; /*toma el ancho sea el ancho total*/
-}
-
-.select-dropdown-custom .dropdown-inner-custom-unico  li.option-custom{
-    width: 100%;
-    list-style: none;
-    padding-left: 0px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color:#0071A6;
-    line-height: 20px;
-    font-size: 14px;
-    min-height: 18px;
-    font-weight:200px;
-    display: flex; /*para que el contenido de texto empiese hasta terminar la linea*/
-    box-sizing: border-box; /*toma el ancho sea el ancho total*/
+div.options-footer{
+    text-align: right;
 }
 
 .select-dropdown-custom .dropdown-inner-custom-unico  li.option-custom-buttons{
@@ -264,7 +234,6 @@ input[type=checkbox] {
     font-weight:200px;
     display: flex; /*para que el contenido de texto empiese hasta terminar la linea*/
     box-sizing: border-box; /*toma el ancho sea el ancho total*/
-
 }
 
 div.content-custom-buttons{
@@ -274,63 +243,6 @@ div.content-custom-buttons{
     width: 100%;
 
 }
-
-
-
-
-.select-dropdown-custom .dropdown-inner-custom  li.option-custom label.label-option-custom,
-.select-dropdown-custom .dropdown-inner-custom-unico li.option-custom label.label-option-custom{
-    width: 100%;
-    cursor: pointer;
-    color:#0071A6;
-    padding: 5px 0px 0px 20px;
-    text-align: left;
-
-}
-
-.select-dropdown-custom .dropdown-inner-custom-unico li.option-custom-buttons label.label-option-custom-buttons{
-    width: 100%;
-    cursor: pointer;
-    color:#0071A6;
-    padding: 5px 0px 0px 0px;
-    text-align: center;
-}
-
-
-
-
-
-.select-dropdown-custom .dropdown-inner-custom  li.option-custom label.label-option-custom:hover, 
-.select-dropdown-custom .dropdown-inner-custom-unico  li.option-custom label.label-option-custom:hover{
-      color: #0D2236; 
-}
-
-div.contenedor-check-custom, div.contenedor-check-custom{
-    padding: 5px 0px 0px 0px;
-
-}
-
- div.contenedor-check-custom-unico{
-    padding: 0px 5px 0px 0px;
-
-}
-
-.select-dropdown-custom .dropdown-inner-custom  li.option-custom div.contenedor-check-custom,
-.select-dropdown-custom .dropdown-inner-custom-unico  li.option-custom div.contenedor-check-custom{
-    width: 10%;
-}
-
-
-.select-dropdown-custom .dropdown-inner-custom  li.option-custom input.input-custom[type="checkbox"]{
-    width: 100%;    
-    background: none;
-    border-style: solid; 
-    border-width: 1px;        
-    border-radius: 2px;  
-    border-color: #0071A6;    
-
-}  
-
 
 
 /*Para hacer hidden el contenido del dropdown*/
@@ -426,6 +338,7 @@ div.contenedor-check-custom, div.contenedor-check-custom{
 
 
 
+
 /*CHECKBOX DE INPUT DIAS */
 
 div.checkbox-custom-buttons{
@@ -455,13 +368,78 @@ div.checkbox-custom-buttons{
 .checkbox-custom-buttons input[type="checkbox"] {
         display: none; 
 }
-    .checkbox-custom-buttons input[type="checkbox"]:checked + label {
+.checkbox-custom-buttons input[type="checkbox"]:checked + label {
     background: #0071A6;
     color: #fff;
 }
 
 
 
+.dropdown-inner-custom2 {
+    width: 100%;
+    margin: 0;
+    padding: 1px 0;
+}
+
+div.content-options{
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    line-height: 20px;
+    font-size: 14px;
+    min-height: 18px;
+    font-weight:200px;
 
 
+}
 
+
+div.option-custom-prueba{
+  width: 50%;
+  display: flex;
+}
+
+div.option-custom-prueba-unico{
+  width: 100%;
+  display: flex;
+}
+
+
+div.option-custom-prueba label.text-option,div.option-custom-prueba-unico label.text-option{
+    width:80%;
+    text-align: left;
+    line-height: initial;
+    cursor: pointer;
+    color:#0071A6;
+    padding: 0px 0px 0px 10px;
+    text-align: left;
+}
+
+div.option-custom-prueba div.checkbox-option-prueba{
+    width:20%;
+    display: flex;
+    
+    align-content: center;
+}
+
+
+.select-dropdown-custom .content-options .option-custom-prueba label.text-option:hover,
+.select-dropdown-custom .content-options .option-custom-prueba-unico label.text-option:hover{
+      color: #0D2236; 
+}
+
+
+.select-dropdown-custom .content-options div.option-custom-prueba div.checkbox-option input.checkbox-custom-prueba[type="checkbox"],
+.select-dropdown-custom .content-options div.option-custom-prueba-unico div.checkbox-option input.checkbox-custom-prueba[type="checkbox"]{
+    
+      background: #ededed;
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+      border-radius: 50%;
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.15); 
+} 

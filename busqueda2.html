@@ -35,7 +35,7 @@
 				       			<div class="row col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 " >
 						       		<div class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " ><!--div de los 3 primeros botones -->
 						       			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-2 mt-sm-2 mt-md-2" >
-						       				<div class="tail-select-custom" >
+						       				<div id="select1" class="tail-select-custom" >
 												<div class="select-label-custom tail-select-container-custom">
 											       <span class="label-count-custom ">
 											            <i class="fas fa-map-marker-alt"></i>
@@ -166,7 +166,7 @@
 												</div>
 											</div>
 										</div>
-							       		<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-2 mt-sm-2 mt-md-2" >
+							       		<div id="select2" class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-2 mt-sm-2 mt-md-2" >
 								       		<div class="tail-select-custom" >
 												<div class="select-label-custom tail-select-container-custom">
 											       <span class="label-count-custom ">
@@ -288,48 +288,138 @@
 											       <span class="label-count-custom ">
 											            <i class="far fa-calendar-plus"></i>
 											        </span>
-											        <span class="label-inner-custom">Fecha</span>
+											        <span class="label-inner-custom">Fecha2</span>
 											    </div>
 						    					<div class="all-dropdown">
 													<div class="dropdown-search-custom">
 														<input type="text" class="search-input2" placeholder="Encontrar Puerto de Salida .....">
 													</div>
-													<div class="select-dropdown-custom">
-														<div class="dropdown-inner-custom-unico">
-															<li class="option-custom-buttons" >
-																<div class="checkbox-custom-buttons">
-																	<input type="checkbox" name="checkbox" id="checkbox37">
-																	<label for="checkbox37" >
-																		<span>1-4 Dias</span>
-																	</label>
-																</div>
-															</li>
-															<li class="option-custom-buttons" >
-																<div class="checkbox-custom-buttons">
-																	<input type="checkbox" name="checkbox" id="checkbox38">
-																	<label for="checkbox38" >
-																		<span>5-8 Dias</span>
-																	</label>
-																</div>
-															</li>
-															<li class="option-custom-buttons" >
-																<div class="checkbox-custom-buttons">
-																	<input type="checkbox" name="checkbox" id="checkbox39">
-																	<label for="checkbox39" >
-																		<span>9-14 Dias</span>
-																	</label>
-																</div>
-															</li>
-															<li class="option-custom-buttons" >
-																<div class="checkbox-custom-buttons">
-																	<input type="checkbox" name="checkbox" id="checkbox40">
-																	<label for="checkbox40" >
-																		<span>+15 Dias</span>
-																	</label>
-																</div>
-															</li>
-														</div>	
+
+													<div style="display:flex; flex-flow: row nowrap">
+												
+														<div style="width:20%;display:flex; flex-flow: row nowrap; justify-content: center;align-items: center">
+															<span style="cursor:pointer;font-size:1.3em"><</span>
+														</div>
+
+
+
+
+														<div style="width:60%" class="select-dropdown-custom">
+															<div class="dropdown-inner-custom-cuatro">
+																<li class="option-custom-buttons" >
+																	<div class="checkbox-custom-buttons">
+																		<input type="checkbox" name="checkbox" id="checkbox37">
+																		<label for="checkbox37" >
+																			<span>1-4 Dias</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="option-custom-buttons" >
+																	<div class="checkbox-custom-buttons">
+																		<input type="checkbox" name="checkbox" id="checkbox38">
+																		<label for="checkbox38" >
+																			<span>5-8 Dias</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="option-custom-buttons" >
+																	<div class="checkbox-custom-buttons">
+																		<input type="checkbox" name="checkbox" id="checkbox39">
+																		<label for="checkbox39" >
+																			<span>9-14 Dias</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="option-custom-buttons" >
+																	<div class="checkbox-custom-buttons">
+																		<input type="checkbox" name="checkbox" id="checkbox40">
+																		<label for="checkbox40" >
+																			<span>+15 Dias</span>
+																		</label>
+																	</div>
+																</li>
+
+															</div>
+															<div class="dropdown-inner-custom-cuatro">
+																<li class="option-custom-buttons" >
+																	<div class="checkbox-custom-buttons">
+																		<input type="checkbox" name="checkbox" id="checkbox37">
+																		<label for="checkbox37" >
+																			<span>1-4 Dias</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="option-custom-buttons" >
+																	<div class="checkbox-custom-buttons">
+																		<input type="checkbox" name="checkbox" id="checkbox38">
+																		<label for="checkbox38" >
+																			<span>5-8 Dias</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="option-custom-buttons" >
+																	<div class="checkbox-custom-buttons">
+																		<input type="checkbox" name="checkbox" id="checkbox39">
+																		<label for="checkbox39" >
+																			<span>9-14 Dias</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="option-custom-buttons" >
+																	<div class="checkbox-custom-buttons">
+																		<input type="checkbox" name="checkbox" id="checkbox40">
+																		<label for="checkbox40" >
+																			<span>+15 Dias</span>
+																		</label>
+																	</div>
+																</li>
+															</div>
+															<div class="dropdown-inner-custom-cuatro">
+																<li class="option-custom-buttons" >
+																	<div class="checkbox-custom-buttons">
+																		<input type="checkbox" name="checkbox" id="checkbox37">
+																		<label for="checkbox37" >
+																			<span>1-4 Dias</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="option-custom-buttons" >
+																	<div class="checkbox-custom-buttons">
+																		<input type="checkbox" name="checkbox" id="checkbox38">
+																		<label for="checkbox38" >
+																			<span>5-8 Dias</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="option-custom-buttons" >
+																	<div class="checkbox-custom-buttons">
+																		<input type="checkbox" name="checkbox" id="checkbox39">
+																		<label for="checkbox39" >
+																			<span>9-14 Dias</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="option-custom-buttons" >
+																	<div class="checkbox-custom-buttons">
+																		<input type="checkbox" name="checkbox" id="checkbox40">
+																		<label for="checkbox40" >
+																			<span>+15 Dias</span>
+																		</label>
+																	</div>
+																</li>
+															</div>
+
+														</div>
+
+														
+
+														<div style="width:20%;display:flex; flex-flow: row nowrap; justify-content: center;align-items: center">
+															<span style="cursor:pointer;font-size:1.3em">></span>
+														</div>
+
+
 													</div>
+												
 													<div class="footer-dropdown-custom">
 														<div class="cruise-count row">
 															<div class="col-6 col-sm-6 col-md-8 col-lg-6 col-xl-7">
@@ -522,9 +612,147 @@
 			    </div>
 	  		</div>	
 		</div> 
-		<!--BUSCADOR -->
+		<!--BUSCADOR 
 
 		
+
+		<div class="container-fluid">
+			<div class="tail-select-custom" >
+												<div class="select-label-custom tail-select-container-custom">
+											       <span class="label-count-custom ">
+											            <i class="far fa-calendar-plus"></i>
+											        </span>
+											        <span class="label-inner-custom">Fecha</span>
+											    </div>
+						    					<div class="all-dropdown">
+													<div class="dropdown-search-custom">
+														<input type="text" class="search-input2" placeholder="Encontrar Puerto de Salida .....">
+													</div>
+													<div class="select-dropdown-custom">
+														<div class="dropdown-inner-custom-cuatro">
+															<li class="option-custom-buttons" >
+																<div class="checkbox-custom-buttons">
+																	<input type="checkbox" name="checkbox" id="checkbox37">
+																	<label for="checkbox37" >
+																		<span>1-4 Dias</span>
+																	</label>
+																</div>
+															</li>
+															<li class="option-custom-buttons" >
+																<div class="checkbox-custom-buttons">
+																	<input type="checkbox" name="checkbox" id="checkbox38">
+																	<label for="checkbox38" >
+																		<span>5-8 Dias</span>
+																	</label>
+																</div>
+															</li>
+															<li class="option-custom-buttons" >
+																<div class="checkbox-custom-buttons">
+																	<input type="checkbox" name="checkbox" id="checkbox39">
+																	<label for="checkbox39" >
+																		<span>9-14 Dias</span>
+																	</label>
+																</div>
+															</li>
+															<li class="option-custom-buttons" >
+																<div class="checkbox-custom-buttons">
+																	<input type="checkbox" name="checkbox" id="checkbox40">
+																	<label for="checkbox40" >
+																		<span>+15 Dias</span>
+																	</label>
+																</div>
+															</li>
+														</div>
+
+
+                                                        
+
+
+														<div class="dropdown-inner-custom-cuatro">
+															<li class="option-custom-buttons" >
+																<div class="checkbox-custom-buttons">
+																	<input type="checkbox" name="checkbox" id="checkbox37">
+																	<label for="checkbox37" >
+																		<span>1-4 Dias</span>
+																	</label>
+																</div>
+															</li>
+															<li class="option-custom-buttons" >
+																<div class="checkbox-custom-buttons">
+																	<input type="checkbox" name="checkbox" id="checkbox38">
+																	<label for="checkbox38" >
+																		<span>5-8 Dias</span>
+																	</label>
+																</div>
+															</li>
+															<li class="option-custom-buttons" >
+																<div class="checkbox-custom-buttons">
+																	<input type="checkbox" name="checkbox" id="checkbox39">
+																	<label for="checkbox39" >
+																		<span>9-14 Dias</span>
+																	</label>
+																</div>
+															</li>
+															<li class="option-custom-buttons" >
+																<div class="checkbox-custom-buttons">
+																	<input type="checkbox" name="checkbox" id="checkbox40">
+																	<label for="checkbox40" >
+																		<span>+15 Dias</span>
+																	</label>
+																</div>
+															</li>
+														</div>
+														<div class="dropdown-inner-custom-cuatro">
+															<li class="option-custom-buttons" >
+																<div class="checkbox-custom-buttons">
+																	<input type="checkbox" name="checkbox" id="checkbox37">
+																	<label for="checkbox37" >
+																		<span>1-4 Dias</span>
+																	</label>
+																</div>
+															</li>
+															<li class="option-custom-buttons" >
+																<div class="checkbox-custom-buttons">
+																	<input type="checkbox" name="checkbox" id="checkbox38">
+																	<label for="checkbox38" >
+																		<span>5-8 Dias</span>
+																	</label>
+																</div>
+															</li>
+															<li class="option-custom-buttons" >
+																<div class="checkbox-custom-buttons">
+																	<input type="checkbox" name="checkbox" id="checkbox39">
+																	<label for="checkbox39" >
+																		<span>9-14 Dias</span>
+																	</label>
+																</div>
+															</li>
+															<li class="option-custom-buttons" >
+																<div class="checkbox-custom-buttons">
+																	<input type="checkbox" name="checkbox" id="checkbox40">
+																	<label for="checkbox40" >
+																		<span>+15 Dias</span>
+																	</label>
+																</div>
+															</li>
+														</div>
+
+													</div>
+													<div class="footer-dropdown-custom">
+														<div class="cruise-count row">
+															<div class="col-6 col-sm-6 col-md-8 col-lg-6 col-xl-7">
+																<span>8 Cruceros</span>
+															</div>
+															<div class="col-6 col-sm-6 col-md-4 col-lg-6 col-xl-5 options-footer">
+																<span class="footer-option-custom ">SOLICITAR</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+		</div>-->
+
+
 		
 
 
@@ -548,16 +776,42 @@
 
     			console.log("DOM fully loaded and parsed");
 
-    			const listado_evento = ["#select1","#select2","#select3"]
+    			//trea_datos_servicio()
+
+    			const listado_evento = ["#select1","#select2"]
     	
     			listado_evento.forEach((value)=>{
     				agregar_evento_abrir(value)
     			})
 
-    			agregar_evento_select_duracion("#select4",".select-dropdown3")
-    			agregar_evento_select_duracion("#select5",".select-dropdown")
+    			//agregar_evento_select_duracion("#select4",".select-dropdown3")
+    			//agregar_evento_select_duracion("#select5",".select-dropdown")
 
   			});
+
+  			const trea_datos_servicio = async function (){
+  				
+
+  				const url = "http://localhost/servicio.php"
+
+  				try{
+  					const response = await fetch(url, {
+  					    mode:"cors",
+  					    credentials:"same-origin"
+  			   	    }) 
+
+     				const response_json = await response.json()
+     				return true;
+  				
+  				}catch(err){
+  					console.log("Error: "+err)
+  					return false;
+
+  				}
+  				
+  			}
+
+
 
   			const agregar_evento_abrir = function(selector){
   				
@@ -568,17 +822,15 @@
             	if(!nodo) throw new TypeError ("Selector invalido :(")
 
 
+
                 nodo.addEventListener("click", function (event){
 
-                	agregar_evento_quitar() 
 
                 	const that = this;
-                	that.style="width:100%;z-index:100"
-                	const nodo_padre = that.parentElement;
-                	const nodo_cuerpo = nodo_padre.querySelector(".select-dropdown2")
+                	const nodo_cuerpo = that.querySelector(".all-dropdown")
 
                 	if(nodo_cuerpo){
-                		nodo_cuerpo.style="display:block;width:100%;z-index:100"
+                		nodo_cuerpo.style="display:block;"
 
                 	}else{
                 		console.error("No se pudo obtener el nodo .select-dropdown2")
@@ -604,11 +856,12 @@
   					agregar_evento_quitar();
 
   					const that = this;
-  		  			const nodo = document.querySelector(clase)
+  		  			const nodo = t.querySelector(clase)
 
   					if(!nodo){
   						throw new TypeError("Error al obtener el selector .select")
   					}
+
 
   					nodo.style="display:block"
 
@@ -644,6 +897,8 @@
 
   			const agregar_evento_quitar = function(){
 
+  				/*
+
   				const nodos = document.querySelectorAll("[data-open]")
 
   				if(!nodos){
@@ -664,10 +919,25 @@
                 		console.error("No se pudo obtener el nodo .select-dropdown2")
                 	}
 
+  				})*/
+
+  				const nodos = document.querySelectorAll(".all-dropdown")
+
+  				if(!nodos){
+  					throw new TypeError("Error al obtener el nodo")
+  				}
+
+  				const nodo_array = Array.from(nodos)
+
+  				nodo_array.forEach((nodo_actual)=>{
+  			
+  					nodo_actual.style = "display:none"
+
   				})
 
-  				quitar_evento_select_duracion("#select4",".select-dropdown3")
-  				quitar_evento_select_duracion("#select5",".select-dropdown")
+
+  				//quitar_evento_select_duracion("#select4",".select-dropdown3")
+  				//quitar_evento_select_duracion("#select5",".select-dropdown")
 
 
   			}

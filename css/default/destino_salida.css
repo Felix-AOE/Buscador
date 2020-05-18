@@ -116,7 +116,22 @@ input[type=checkbox] {
     margin: 0;
     padding: 1px 0;
 }
+/*
+.dropdown-inner-custom-cuatro {
+    width: 100%;
+    margin: 0;
+    padding: 1px 0;
+    column-count: 4;
+}
+*/
 
+
+.dropdown-inner-custom-cuatro {
+    width: 100%;
+    margin: 0;
+    padding: 1px 0;
+    column-count: 4;
+}
 
 
 /*PROPIEDADES DEL INPUT DE TEXTO DEL PRIMER DROPDOWN     */
@@ -236,6 +251,25 @@ div.options-footer{
     box-sizing: border-box; /*toma el ancho sea el ancho total*/
 }
 
+.select-dropdown-custom .dropdown-inner-custom-cuatro  li.option-custom-buttons{
+    width: 100%;
+    list-style: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:#0071A6;
+    line-height: 20px;
+    font-size: 14px;
+    min-height: 18px;
+    font-weight:200px;
+    display: flex; /*para que el contenido de texto empiese hasta terminar la linea*/
+    box-sizing: border-box; /*toma el ancho sea el ancho total*/
+}
+
+
+
+
 div.content-custom-buttons{
     border-color: #0071A6;
     border-style: solid;
@@ -247,7 +281,7 @@ div.content-custom-buttons{
 
 /*Para hacer hidden el contenido del dropdown*/
 .all-dropdown{
-    display: ;
+    display: none;
 }
 
 
@@ -345,6 +379,9 @@ div.checkbox-custom-buttons{
     width: 100%;
 }
 
+div.checkbox-custom-buttons-date{
+    width: 50%;
+}
   
 .checkbox-custom-buttons label {
     display: inline-block;

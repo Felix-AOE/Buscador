@@ -96,7 +96,7 @@ input[type=checkbox] {
 /* contenido personalizado de los dropdown  */
 /*PRIMER DROPDOWN (2 FILAS )*/
 
-.tail-select-custom{
+.tail-select-custom ,.tail-select-custom-calendar{
     width: 100%;
     margin: 1px;
     font-size: 14px;
@@ -136,7 +136,7 @@ input[type=checkbox] {
 
 /*PROPIEDADES DEL INPUT DE TEXTO DEL PRIMER DROPDOWN     */
 
-.tail-select-custom input[type="text"]{
+.tail-select-custom input[type="text"],.tail-select-custom-calendar input[type="text"]{
     color: #425E66;
     width: 100%;
     height: auto;
@@ -169,10 +169,29 @@ input[type=checkbox] {
     border-color: #d9d9d9;
     width: 100%;
     max-height: 300px;
-    overflow-y: scroll;
     overflow-x: hidden;
     border-style: solid;
 }
+
+.tail-select-custom-calendar .select-dropdown-custom{
+    top: 90%;
+    left: 0;
+    color: #303438;    
+    margin: -1px 0 0 0;
+    padding: 0;
+    background-color: white;
+    border-width: 0px;
+    border-style: solid;
+    border-color: #d9d9d9;
+    width: 100%;
+    max-height: 450px;
+    overflow-x: hidden;
+    border-style: solid;
+}
+
+
+
+
 
 
 .select-dropdown-custom .dropdown-search-custom {
@@ -281,14 +300,14 @@ div.content-custom-buttons{
 
 /*Para hacer hidden el contenido del dropdown*/
 .all-dropdown{
-    display: none;
+    /*display: none;*/
 }
 
 
 
 /*PARTE DE AFUERA DEL DROPDOWN*/
 
-.tail-select-custom .select-label-custom{
+.tail-select-custom .select-label-custom, .tail-select-custom-calendar .select-label-custom{
     cursor: pointer;
     color: #0071A6;
     width: 100%;
@@ -303,7 +322,7 @@ div.content-custom-buttons{
     border-radius: 0px;
 }
 
-.tail-select-custom .select-label-custom:hover{
+.tail-select-custom .select-label-custom:hover,.tail-select-custom-calendar .select-label-custom:hover {
     color:#0D2236;
 }
     
@@ -312,7 +331,7 @@ div.content-custom-buttons{
 
 
 /*Flecha del input principal*/
-.tail-select-custom .select-label-custom:after{
+.tail-select-custom .select-label-custom:after, .tail-select-custom-calendar .select-label-custom:after{
     top: 15px;
     right: 12px;
     width: 0;
@@ -339,7 +358,7 @@ div.content-custom-buttons{
 }
 
 /*Icono*/
-.tail-select-custom .select-label-custom .label-count-custom{
+.tail-select-custom .select-label-custom .label-count-custom, .tail-select-custom-calendar .select-label-custom .label-count-custom{
     float: left;
     color: #0071A6; 
     margin: 0 5px 0 0;
@@ -356,9 +375,6 @@ div.content-custom-buttons{
 }
 
 /*PARTE DE AFUERA DEL DROPDOWN*/
-
-
-
 
 
 /*SEGUNDO BOTON*/
@@ -458,7 +474,6 @@ div.option-custom-prueba label.text-option,div.option-custom-prueba-unico label.
 div.option-custom-prueba div.checkbox-option-prueba{
     width:20%;
     display: flex;
-    
     align-content: center;
 }
 
@@ -480,3 +495,45 @@ div.option-custom-prueba div.checkbox-option-prueba{
       position: relative;
       border: 1px solid rgba(0, 0, 0, 0.15); 
 } 
+
+
+
+
+
+
+
+div.content-calendar-dropdown{
+    display:flex;
+    flex-flow: row nowrap;
+}
+
+
+div.content-calendar-dropdown div.container-arrow-calendar{
+    width:5%;
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+div.content-calendar-dropdown div.container-arrow-calendar i.icon-arrow{
+    color: #0071A6 ;
+    cursor: pointer;
+}
+
+
+div.container-year-calendar{
+    width: 100%; 
+    display: flex;
+    color:#0071A6;
+}
+
+div.container-year-calendar div.text-calendar{
+    width: 50%; 
+    display: flex;  
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+

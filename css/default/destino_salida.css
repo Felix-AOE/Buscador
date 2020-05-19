@@ -358,7 +358,7 @@ div.content-custom-buttons{
 
 /*Para hacer hidden el contenido del dropdown*/
 .all-dropdown{
-    /*display: none;*/
+    display: none;
 }
 
 

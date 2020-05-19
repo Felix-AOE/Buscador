@@ -283,7 +283,7 @@
 						       		</div><!--Cierre fila con 3 botones-->
 						       		<div class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 " >
 						       			<div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-6 mt-2 mt-sm-2 mt-md-2">
-						       				<div class="tail-select-custom-calendar" >
+						       				<div id="select3" class="tail-select-custom-calendar" >
 												<div class="select-label-custom tail-select-container-custom">
 											       <span class="label-count-custom ">
 											            <i class="far fa-calendar-plus"></i>
@@ -531,7 +531,7 @@
 											</div>
 						       			</div>
 						       			<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 mt-2 mt-sm-2 mt-md-2"  >
-						       				<div class="tail-select-custom" >
+						       				<div id="select4" class="tail-select-custom" >
 												<div class="select-label-custom tail-select-container-custom">
 											       <span class="label-count-custom ">
 											            <i class="far fa-calendar-plus"></i>
@@ -596,7 +596,7 @@
 
 
 
-										    <div class="tail-select-custom" >
+										    <div id="select5" class="tail-select-custom" >
 												<div class="select-label-custom tail-select-container-custom">
 											       <span class="label-count-custom ">
 											            <i class="far fa-calendar-plus"></i>
@@ -720,20 +720,18 @@
         <script>
         	
 
+    		const listado_evento = ["#select1","#select2","#select3","#select4","#select5"]
+
+
             document.addEventListener("DOMContentLoaded", function(event) {
 
     			console.log("DOM fully loaded and parsed");
 
     			//trea_datos_servicio()
-
-    			const listado_evento = ["#select1","#select2"]
     	
     			listado_evento.forEach((value)=>{
     				agregar_evento_abrir(value)
     			})
-
-    			//agregar_evento_select_duracion("#select4",".select-dropdown3")
-    			//agregar_evento_select_duracion("#select5",".select-dropdown")
 
   			});
 
@@ -770,9 +768,9 @@
             	if(!nodo) throw new TypeError ("Selector invalido :(")
 
 
-
                 nodo.addEventListener("click", function (event){
 
+					agregar_evento_quitar()
 
                 	const that = this;
                 	const nodo_cuerpo = that.querySelector(".all-dropdown")
@@ -787,108 +785,65 @@
                 })
   			}
 
-  			const agregar_evento_select_duracion = function (selector,clase){
 
-  				if(!(selector && clase)){
-  					throw new TypeError("Parametros invalidos")
-  				}
-
-  				const nodo = document.querySelector(selector)
-
-  				if(!nodo){
-  					throw new TypeError("Error al obtener el selector #select4")
-  				}
-
-  				nodo.addEventListener("click",(event)=>{
-
-  					agregar_evento_quitar();
-
-  					const that = this;
-  		  			const nodo = t.querySelector(clase)
-
-  					if(!nodo){
-  						throw new TypeError("Error al obtener el selector .select")
-  					}
-
-
-  					nodo.style="display:block"
-
-  				})
-
-  			}
-
-
-  			const quitar_evento_select_duracion = function(selector,clase){
-
-  				if(!(selector && clase)){
-  					throw new TypeError("Parametros invalidos")
-  				}
-
-
-  				const nodo = document.querySelector(selector)
-
-  				if(!nodo){
-  					throw new TypeError("Error al obtener el selector #select4")
-  				}
-
-  				const nodo_hijo = document.querySelector(clase)
-
-				if(!nodo_hijo){
-					throw new TypeError("Error al obtener el selector .select")
-				}
-
-  				nodo_hijo.style="display:none"
-
-
-  			}
 
 
   			const agregar_evento_quitar = function(){
 
-  				/*
-
-  				const nodos = document.querySelectorAll("[data-open]")
-
-  				if(!nodos){
-  					throw new TypeError("Error al obtener el nodo")
+  				if(!(Array.isArray(listado_evento))){
+  					throw new TypeError("Error en el listado nodos")
   				}
 
-  				const nodo_array = Array.from(nodos)
+  				listado_evento.forEach((selector)=>{
 
-  				nodo_array.forEach((nodo_actual)=>{
-  					nodo_actual.style="width:100%;z-index:27"
-  					const nodo_padre = nodo_actual.parentElement;
-                	const nodo_cuerpo = nodo_padre.querySelector(".select-dropdown2")
+  					const nodo_base = document.querySelector(selector)
 
-                	if(nodo_cuerpo){
-                		nodo_cuerpo.style="display:none;z-index:27;width:100%"
+  					if(nodo_base){
 
-                	}else{
-                		console.error("No se pudo obtener el nodo .select-dropdown2")
-                	}
+	  					const nodo_hijo = nodo_base.querySelector(".all-dropdown")
 
-  				})*/
 
-  				const nodos = document.querySelectorAll(".all-dropdown")
+	  					if(nodo_hijo){
+	  						nodo_hijo.style = "display:none"
+	  					}else{
+	  						console.error("Error al obtener el nodo hijo")
 
-  				if(!nodos){
-  					throw new TypeError("Error al obtener el nodo")
-  				}
+	  					}
+	  
+  					}else{
+  						console.error("Error al obtener el nodo base")
+  					}
 
-  				const nodo_array = Array.from(nodos)
-
-  				nodo_array.forEach((nodo_actual)=>{
-  			
-  					nodo_actual.style = "display:none"
 
   				})
 
-
-  				//quitar_evento_select_duracion("#select4",".select-dropdown3")
-  				//quitar_evento_select_duracion("#select5",".select-dropdown")
-
-
   			}
+
+
+  			document.addEventListener("click",(event)=>{
+
+  				console.log("asdasd")
+  				console.log(event)
+
+  				const nodo_target = event.srcElement;
+
+  				const nodo_busqueda = nodo_target.parentNode.querySelectorAll(".all-dropdown")
+
+  				const nodo_array = Array.from(nodo_busqueda)
+
+  				if(nodo_array.length != 1){
+  					agregar_evento_quitar()
+
+  				}else{
+  					const nodo_seleccionado = nodo_array[0]
+
+  					console.log("estado:::")
+  					console.log(nodo_seleccionado.style.display)
+  				}
+
+  				console.log(nodo_array.length)
+  	
+  			})
 
             </script>
         

@@ -1,0 +1,38 @@
+
+header {
+    height: 50px;
+    background: #fff;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+
+/*Menu*/
+
+.contenedor label.menu-icon{
+    float: right;
+    cursor: pointer;
+    margin :15px 10px;
+}
+.contenedor .menu-icon{
+    font-size: 20px;
+}
+
+.contenedor input#menu_bar{
+    display: none;
+}
+
+.menu{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top:50px;
+    left: 0;
+    transition: all 1s;
+    transform: translateY(-110%);
+    background: #fff;
+}
+
+#menu_bar:checked ~ .menu {
+    transform: translateX(0%);
+}

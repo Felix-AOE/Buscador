@@ -168,7 +168,7 @@ input[type=checkbox] {
     border-style: solid;
     border-color: #d9d9d9;
     width: 100%;
-    max-height: 300px;
+    max-height: 400px;
     overflow-x: hidden;
     border-style: solid;
 }
@@ -186,6 +186,7 @@ input[type=checkbox] {
     width: 100%;
     max-height: 450px;
     overflow-x: hidden;
+    overflow-y: hidden;
     border-style: solid;
 }
 

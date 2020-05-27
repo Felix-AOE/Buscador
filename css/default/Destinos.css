@@ -1,6 +1,6 @@
 .cruise-alternative img{
     width: 100%;
-    max-height: 230px;
+    max-height: 250px;
 }
 
 .cruise-alternative a{
@@ -27,8 +27,17 @@
     font-weight: 300;
 }
 
-
 .content-alternative-price{
+    color:rgb(124, 124, 124);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: auto;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px;
+    border-color: lightgray;
+    border-bottom-style: dotted;
     margin-left: 20px;
     margin-top: 10px;
     margin-right: 20px;
@@ -36,30 +45,19 @@
 }
 
 
-.content-alternative-price{
-    color:rgb(124, 124, 124);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    text-align: auto;
-    display: flex;
-    padding-right: 5px;
-    padding-bottom: 10px;
-    border-bottom: 1px;
-    border-color: lightgray;
-    border-bottom-style: dotted;
-}
 
 
 
-/*Precio de crucero */
+/*Precio de crucero cambiar*/
 .container-price .symbol-price{
     font-size: 12px;
-    position: absolute;
     font-weight: 900;
     color: black;
 }
 
+.text-alternative{
+    padding-top: 20px;
+}
 
 .alternative-price{
     color: black;
@@ -69,6 +67,7 @@
 
 .alternative-money{
     color: black;
+    margin-top: 20px;
 }
 
 
@@ -111,7 +110,7 @@
 /*Botones*/
 
 .btn-detalles {
-    color: rgb(36, 95, 133);;
+    color: rgb(36, 95, 133);
     background-color: #fff;
     border-color: rgb(36, 95, 133);
     border-radius: 0px;
@@ -151,3 +150,321 @@
     margin: auto;
 }
 
+/*SOCIAL MEDIA*/
+
+.content-icon-social{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-radius:50%; 
+    font-size: 15px;
+    border-width: 1px;
+    color: rgb(36, 95, 133);
+}
+
+.social-media-share{
+    width: 60%;
+    margin-top: 20px;
+    text-align: right;
+}
+.social-media-icons{
+    width:40%; 
+    display: flex;
+}
+.social-margin{
+    margin: 10px;
+}
+
+/*PROMOCIONES*/
+
+
+.content-alternative-promotions{
+    color:rgb(124, 124, 124);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: auto;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px;
+    border-color: lightgray;
+    border-bottom-style: dotted;
+    display: inline-block;
+    width: 100%
+}
+
+.title-promotions{
+    width: 100%; 
+    display: flex;
+}
+
+.container-row-promotion{
+    width: 100%; 
+    display: flex;
+}
+
+.container-img-row-promotion{
+    padding-top: 10px;
+    padding-right: 10px; 
+    padding-bottom: 10px;
+}
+
+.container-img-row-promotion img{
+    width: 30px; 
+    height: 26px;
+}
+
+.container-text-promotion{
+    display: flex;
+}
+
+.container-text-promotion span{
+    margin: auto;
+    color: rgb(50,50,50);
+}
+
+.container-promotions{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+/*CHECKBOX*/
+
+.content-alternative-price input[type=checkbox] {
+	display:none; 
+}
+.content-alternative-price input[type=checkbox] + label {
+	cursor: pointer;
+}
+.content-alternative-price label:before {
+	content: "";
+	background: transparent;
+	border: 1px solid rgb(36, 95, 133);
+	display: inline-block;
+	height: 30px;
+	margin-right: 10px;
+	text-align: center;
+	vertical-align:middle;
+	width: 30px;
+}
+.content-alternative-price input[type=checkbox]:checked + label:before {
+	content: '✓';
+	font-size: 20px;
+	color: rgb(36, 95, 133);
+	font-family: "Times New Roman";
+}
+
+
+/*TITULO*/
+
+
+
+/*BOTONES DE ABAJO*/
+
+.tail-select-custom-price{
+    width: 50%;
+    margin: auto;
+    font-size: 14px;
+    line-height: 40px;
+    font-family: inherit;
+    font-weight: bold;
+    border-style: bold;
+    border-style: solid;
+    border-color: #d9d9d9;
+    border-width: 1px;  
+    background-color:#245F85; 
+    color: #fff;
+    text-align: center
+}
+
+.tail-select-custom-price:hover{
+    cursor: pointer;
+}
+
+.container-button-price-date{
+   height: 60px; 
+   background-color: rgb(230, 230, 230); 
+   display: flex
+}
+
+.fa-chevron-down{
+ color: #E17913 ;   
+}
+
+
+/*AREA DROPDOWN*/
+
+.container-content-price-date{
+    width: 100%;
+    border-top-style: bold;
+    border-top-style: solid;
+    border-top-color: #d9d9d9;
+    border-top-width: 1px; 
+    
+    
+}
+.container-text-price-date{
+    margin-left: 20px;
+}
+
+.first-text-price-date{
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    
+}
+
+.second-text-price-date{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;s
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.container-header-price-date{
+    border-top: 1px;
+    border-top-style: solid;
+    background-color: rgb(230,230,230);
+}
+
+.container-padding{
+    margin-left: 20px;  
+}
+
+.container-text-price-text-dropdown{
+    display: flex; 
+    width: 100%;   
+}
+
+.first-text-header{ 
+    display: block; 
+    width: 40%; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    border-right-style: dotted;
+    border-right-color: rgb(170,170,170);
+    border-right-width: 1px;
+}
+.second-text-header{
+    display: block; 
+    width: 60%; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.text-option-black{
+    font-size: 12px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container-options-white{
+    border-top: 1px;
+    border-top-style: solid;
+    background-color: #fff;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(50,50,50);
+    border-bottom-width: 1px;
+    
+}
+
+.second-option-person-price{
+    display: flex; 
+    width: 60%; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+
+.first-text-price-prom{
+    display: flex; 
+    color:rgb(124, 124, 124);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left; 
+    width: 20%; 
+    margin: auto;
+}
+
+.second-text-price-prom{
+    display: flex; 
+    color:#245F85;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    text-align: left; 
+    width: 40%;
+}
+
+.third-text-price-prom{
+    text-align: right;
+    width: 40%; 
+    margin: auto;
+    padding-right: 20px; 
+    color: #FF8309;
+}
+
+.icon-third-prom{
+    cursor: pointer;
+}
+
+
+/*OPCIONES DE CRUCEROS*/
+
+
+.container-options-cruise-prices{
+    background-color: #fff;
+    height: 90px; 
+    padding-top: 10px; 
+    margin-left: 20px; 
+    margin-right: 20px
+}
+
+.content-option-cruise{
+    background-color: rgb(230,230,230); 
+    height: 70px; 
+    display: flex;
+}
+
+
+.container-image-text-option{
+    padding:10px;
+    width: 20%;
+}
+
+.container-align-cruise-option{
+    text-align: center;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.container-align-cruise-option img{
+    height: 20px; 
+    width: 20px;
+}
+
+.container-price-option-cruise{
+    50%;margin: auto; 
+    color:#245F85;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.container-option-cruise-arrow{
+    width:20%;
+    margin: auto; 
+    text-align: right; 
+    color: #245F85;
+}
+.container-option-cruise-arrow:hover{
+    cursor:pointer;
+}

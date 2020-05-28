@@ -73,11 +73,15 @@
 
 .container-view-price{
     width: 20%;
-    text-align: center;
+    text-align: right;
     margin: auto;
 }
 .container-price{
     width: 80%;
+}
+
+.container-all-price{
+    display: flex;
 }
 
 .container-alternative-ship{
@@ -521,7 +525,7 @@
 
 @media (min-width:350px){
     .tail-select-custom-price{
-        width: 50%;
+        width: 60%;
     }
     
     .social-media-share{

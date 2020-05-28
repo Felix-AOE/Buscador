@@ -1,0 +1,77 @@
+.container-POPUP{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 600ms;
+}
+
+.container-POPUP:target{
+    background-color: #fff;
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.container-title-popup{
+    background-color: rgb(36, 95, 133);
+}
+
+.container-text-title-popup{
+    color: #fff;
+    margin-left: 20px; 
+    display: flex; 
+    height: 50px;
+}
+
+.container-SK-popup{
+    width: 90%
+}
+
+.container-X-popup{
+    width: 10%;
+}
+
+.X-text-popup{
+    color: #fff;  
+    font-size: 20px;
+}
+
+.margin-container-SK{
+    margin: 20px;
+}
+
+.container-option-title-SK{
+    display: flex;
+}
+
+.container-img-SK{
+    display: flex ;
+}
+
+.container-img-SK img{
+    width: 40px; 
+    height: 40px;
+}
+
+.title-SK{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto; 
+    margin-left: 10px
+}
+
+.container-explication-SK{
+    margin-left: 55px;
+}
+
+.container-explication-SK ul{
+    margin-left: 10px;
+    list-style: none;
+}

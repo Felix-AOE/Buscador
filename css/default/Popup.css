@@ -76,3 +76,43 @@
     margin-left: 10px;
     list-style: none;
 }
+
+@media (min-width:600px){
+    .container-SK-popup{
+        width: 94%
+    }
+
+    .container-X-popup{
+        width: 6%;
+    }
+    
+    
+}
+
+@media (min-width:800px){
+    .container-SK-popup{
+        width: 95%
+    }
+
+    .container-X-popup{
+        width: 5%;
+    }
+    
+    
+}
+
+@media (min-width:1000px){
+    .container-SK-popup{
+        width: 96%
+    }
+
+    .container-X-popup{
+        width: 4%;
+    }
+    
+    .container-POPUP{
+        
+    }
+
+    
+}

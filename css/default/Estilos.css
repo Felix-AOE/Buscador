@@ -1,6 +1,7 @@
 @import url(Menu.css);
 @import url(Destinos.css);
 @import url(Popup.css);
+@import url(Contenedor.css);
 
 *{
     margin: 0 ;

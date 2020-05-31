@@ -1,0 +1,53 @@
+.container-menu-desktop{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.row-menu-desktop{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aqua;
+    width: 100%;
+    
+}
+
+.elemento-menu-desktop{
+    min-width: 400px;
+    background-color: red; 
+    margin: auto; 
+   
+}
+
+.elemento-menu-desktop-button{
+    min-width: 400px;
+    background-color: red; 
+    margin: auto; 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.container-menu-dropdown{
+    width: 100%;
+}
+
+
+.margin-menu-dropdown-option{
+    margin: 2%;
+}
+.margin-menu-dropdown-option-top{
+    margin: 0% 2% 2% 2%;
+}
+
+container-options-doble{
+    width: 100%; 
+    display: flex;
+    background-color: yellow; 
+    flex-wrap: wrap;
+}
+
+.container-menu-dropdown-doble{
+    
+    background-color: green; 
+    min-width: 50%;
+}

@@ -36,3 +36,4 @@ header {
 #menu_bar:checked ~ .menu {
     transform: translateX(0%);
 }
+

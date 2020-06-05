@@ -2,6 +2,7 @@
 @import url(Destinos.css);
 @import url(Popup.css);
 @import url(Contenedor.css);
+@import url(Footer.css);
 
 *{
     margin: 0 ;
@@ -15,4 +16,5 @@
     overflow-y: hidden;
     color: rgb(0, 113, 166);
 }
+
 

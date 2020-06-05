@@ -90,6 +90,7 @@ input[type=checkbox] {
     background-color: white !important; 
     background-clip: border-box;
     /*border: 1px solid rgba(0,0,0,.125);*/
+    margin-left: 50px
     
 }
 

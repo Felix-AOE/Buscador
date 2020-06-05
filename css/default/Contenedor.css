@@ -6,21 +6,18 @@
 .row-menu-desktop{
     display: flex;
     flex-wrap: wrap;
-    background-color: aqua;
     width: 100%;
     
 }
 
 .elemento-menu-desktop{
-    min-width: 400px;
-    background-color: red; 
+    min-width: 280px;
     margin: auto; 
    
 }
 
 .elemento-menu-desktop-button{
-    min-width: 400px;
-    background-color: red; 
+    min-width: 280px;
     margin: auto; 
     display: flex;
     flex-wrap: wrap;
@@ -39,15 +36,99 @@
     margin: 0% 2% 2% 2%;
 }
 
+
+.margin-menu-dropdown-option-doble{
+    margin: 2% 2% 2% 2%;
+}
 container-options-doble{
     width: 100%; 
     display: flex;
     background-color: yellow; 
     flex-wrap: wrap;
+    margin-top: 0px;
 }
 
 .container-menu-dropdown-doble{
-    
-    background-color: green; 
     min-width: 50%;
+}
+
+
+@media (min-width:600px){
+    .elemento-menu-desktop{
+        min-width: 400px;
+    }
+    
+    
+    .elemento-menu-desktop-button{
+        min-width: 400px;
+    }
+}
+
+
+@media (min-width:800px){
+    .elemento-menu-desktop{
+        min-width: 350px;
+    }
+    
+    
+    .elemento-menu-desktop-button{
+        min-width: 350px;
+    }
+    
+    .margin-menu-dropdown-option-top{
+        margin: 2% 2% 2% 2%;
+    }
+    
+    .container-menu-dropdown-doble{
+        width: 50%;
+    }
+    .container-options-doble{
+        display: flex;
+    }
+    
+    .margin-menu-dropdown-option-doble{
+        margin: 0% 2% 2% 2%;
+    }
+    
+}
+
+@media (min-width:1000px){
+    .elemento-menu-desktop{
+        min-width: 450px;
+    }
+    
+    
+    .elemento-menu-desktop-button{
+        min-width: 100%;
+    }
+    
+    .margin-menu-dropdown-option-top{
+        margin: 2% 2% 1% 2%;
+    }
+    
+    .container-menu-dropdown-doble{
+        width: 50%;
+    }
+    .container-options-doble{
+        display: flex;
+        margin: 1% 1% 1% 1%;
+    }
+}
+
+@media (min-width:1000px){
+    .elemento-menu-desktop{
+        min-width: 400px;
+    }
+    
+   
+    .margin-menu-dropdown-option-top{
+        margin: 2% 2% 2% 2%;
+    }
+    
+    .container-menu-dropdown-doble{
+        width: 50%;
+    }
+    .container-options-doble{
+        display: flex;
+    }
 }

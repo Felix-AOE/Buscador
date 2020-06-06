@@ -20,11 +20,16 @@
 }
 
 .content-text-alternative p{
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 0px;
     font-style: italic;
     font-size: 12px;
     font-family: Georgia, serif;
     font-weight: 300;
+}
+
+.content-text-alternative a{
+    font-size: 16px;
 }
 
 .content-alternative-price{
@@ -50,8 +55,8 @@
 
 /*Precio de crucero cambiar*/
 .container-price .symbol-price{
-    font-size: 12px;
-    font-weight: 900;
+    font-size: 28px;
+    font-weight: 700;
     color: black;
 }
 
@@ -78,10 +83,6 @@
 }
 .container-price{
     width: 80%;
-}
-
-.container-all-price{
-    display: flex;
 }
 
 .container-alternative-ship{
